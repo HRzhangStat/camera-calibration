@@ -1,8 +1,13 @@
 name: CI
 
+# 注意：当前 GitHub 账号因账单问题被锁，Actions 无法运行。
+# 修好账单后，把下面改成:
+#   on:
+#     push:
+#     pull_request:
+# 即可恢复自动检查。平时用 `bash scripts/check.sh` 本地检查。
 on:
-  push:
-  pull_request:
+  workflow_dispatch:
 
 jobs:
   check:

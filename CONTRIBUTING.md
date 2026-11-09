@@ -85,7 +85,7 @@ git push origin feature/<名字>-<任务>
 ## 六、提交前检查
 
 ```bash
-python -m py_compile src/*.py     # 语法检查
+bash scripts/check.sh             # 语法 + 入口 + 接口契约，一条命令全查
 bash scripts/build_report.sh      # 报告能否正常生成
 ```
 
