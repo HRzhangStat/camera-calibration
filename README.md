@@ -149,7 +149,9 @@ bash scripts/build_report.sh
 
 ## 协作流程
 
-见 [CONTRIBUTING.md](CONTRIBUTING.md)。简述：
+**分工与排期见 [docs/分工说明.md](docs/分工说明.md)。**
+
+协作规范见 [CONTRIBUTING.md](CONTRIBUTING.md)。简述：
 
 ```bash
 git clone <主仓库地址>
