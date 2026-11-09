@@ -1,0 +1,25 @@
+# 虚拟环境
+.venv/
+env/
+venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# 编辑器
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# 原始压缩包（放 Releases 或网盘）
+*.rar
+*.zip
+
+# 临时文件
+*.bak
+*.tmp
+~$*
