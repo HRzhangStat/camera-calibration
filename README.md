@@ -30,7 +30,6 @@ camera-calibration/
 │   └── exp_boards.py          # D
 ├── tests/
 │   └── test_contract.py       # 组长：接口契约测试
-├── .github/workflows/ci.yml   # 组长：每次 push 自动检查
 ├── outputs/                   # 所有脚本产物（不要手改）
 ├── report/
 │   ├── 00-封面与分工.md

@@ -6,7 +6,7 @@
 
 | 成员 | 分支名 | 负责文件 |
 |---|---|---|
-| 组长 | `feature/<名字>-repo` | `README.md` `CONTRIBUTING.md` `scripts/` `src/pipeline.py` `tests/` `.github/` `report/00-*.md` `report/04-*.md` |
+| 组长 | `feature/<名字>-repo` | `README.md` `CONTRIBUTING.md` `scripts/` `src/pipeline.py` `tests/` `report/00-*.md` `report/04-*.md` |
 | A | `feature/<名字>-detect` | `src/detect_corners.py` `experiments/exp_detector.py` `data/manifest.json` |
 | B | `feature/<名字>-calibrate` | `src/calibrate.py` `experiments/exp_flags.py` |
 | C | `feature/<名字>-evaluate` | `src/evaluate.py` `experiments/exp_views.py` `report/03a-*.md` |

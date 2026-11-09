@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 本地检查：等价于 CI 做的事，提交前跑一遍
+# 本地自检：提交前跑一遍（可选，不跑也能提交）
 #
 # 默认自动寻找装了 opencv 的 python。也可以手动指定：
 #     PYTHON=~/miniforge3/envs/calib/bin/python bash scripts/check.sh
