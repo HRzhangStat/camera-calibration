@@ -20,7 +20,17 @@ camera-calibration/
 │   ├── detect_corners.py      # A：角点检测      → outputs/corners.json
 │   ├── calibrate.py           # B：相机标定      → outputs/calib.json
 │   ├── evaluate.py            # C：精度评估      → outputs/figures/eval_*.png
-│   └── undistort.py           # D：畸变校正      → outputs/figures/undistort_*.png
+│   ├── undistort.py           # D：畸变校正      → outputs/figures/undistort_*.png
+│   ├── report_tables.py       # E：生成报告表格  → outputs/tables/tables.md
+│   └── pipeline.py            # 组长：一键跑全流程
+├── experiments/               # 对比实验（每人一个）
+│   ├── exp_detector.py        # A
+│   ├── exp_flags.py           # B
+│   ├── exp_views.py           # C
+│   └── exp_boards.py          # D
+├── tests/
+│   └── test_contract.py       # 组长：接口契约测试
+├── .github/workflows/ci.yml   # 组长：每次 push 自动检查
 ├── outputs/                   # 所有脚本产物（不要手改）
 ├── report/
 │   ├── 00-封面与分工.md

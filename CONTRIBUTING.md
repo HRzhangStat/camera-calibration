@@ -6,12 +6,12 @@
 
 | 成员 | 分支名 | 负责文件 |
 |---|---|---|
-| 组长 | `feature/<名字>-repo` | `README.md` `CONTRIBUTING.md` `scripts/` `report/00-*.md` `report/04-*.md` |
-| A | `feature/<名字>-detect` | `src/detect_corners.py` `data/manifest.json` |
-| B | `feature/<名字>-calibrate` | `src/calibrate.py` |
-| C | `feature/<名字>-evaluate` | `src/evaluate.py` `report/03a-*.md` |
-| D | `feature/<名字>-undistort` | `src/undistort.py` `report/03b-*.md` |
-| E | `feature/<名字>-report` | `report/01-*.md` `report/02-*.md` |
+| 组长 | `feature/<名字>-repo` | `README.md` `CONTRIBUTING.md` `scripts/` `src/pipeline.py` `tests/` `.github/` `report/00-*.md` `report/04-*.md` |
+| A | `feature/<名字>-detect` | `src/detect_corners.py` `experiments/exp_detector.py` `data/manifest.json` |
+| B | `feature/<名字>-calibrate` | `src/calibrate.py` `experiments/exp_flags.py` |
+| C | `feature/<名字>-evaluate` | `src/evaluate.py` `experiments/exp_views.py` `report/03a-*.md` |
+| D | `feature/<名字>-undistort` | `src/undistort.py` `experiments/exp_boards.py` `report/03b-*.md` |
+| E | `feature/<名字>-report` | `src/report_tables.py` `report/01-*.md` `report/02-*.md` |
 
 > **只改自己那一列的文件。** 需要改别人的文件时，先在群里说，或者在自己的 PR 里留言让对方改。
 
