@@ -2,9 +2,11 @@
 
 ## 版本与输入
 
-B 分支 `feature/xieyunjie-calibrate`，基于 main `d739926`。检查时远程只有 main，PR 列表为空；A 的检测实现、9×9 清单和 JSON 尚未合入，未发现可引用的 A 分支/PR。本 PR 不含 A 的成果，读取 A 本地交接包。**不是依赖某个未合并 A PR，而是依赖尚未上传的 A 真实输入文件**。组长应让 A 独立上传检测代码、清单、两份 JSON；不要用 main 的检测占位脚本覆盖它们。文件哈希见 `b_input_provenance.json` 和 `calib*.audit.json`。
+当前交付为 PR #1（https://github.com/HRzhangStat/camera-calibration/pull/1），源分支 `xieyunjie-b`，基于 main `d739926`。已按审查意见将 B 实现与产物从嵌套目录移到仓库根目录，只覆盖 B 的两个空壳源码文件，移除重复副本和 11 个缓存文件，算法代码未修改。
 
-对照结果：交接包与 main 的 README、CONTRIBUTING、requirements 内容相同（换行符不同）；A 实现了 detect_corners.py、exp_detector.py 并更新 manifest。15 张原图逐文件 SHA256 与 main 一致。A 还提供角点叠加图与检测器对比，均留在原交接包，没有作为 B 的提交。
+两份输入 `outputs/corners.json`、`outputs/corners_board1.json` 是 A 的真实交接成果，本次按组长要求原样补齐，归属 A。A 已独立提交 PR #3（https://github.com/HRzhangStat/camera-calibration/pull/3），检测代码和清单仍由 A 的 PR 交付，本 PR 不复制它们；仅运行 B 不依赖 A PR 合入。不要运行 main 的检测空壳脚本来覆盖已提供的角点。文件哈希见 `b_input_provenance.json` 和 `calib*.audit.json`。
+
+对照结果：交接包与 main 的 README、CONTRIBUTING、requirements 内容相同（换行符不同）；A 实现了 detect_corners.py、exp_detector.py 并更新 manifest。15 张原图逐文件 SHA256 与 main 一致。A 还提供角点叠加图与检测器对比，均由 A 的 PR 交付，不作为 B 算法成果。
 
 ## 如何配对
 
@@ -46,21 +48,22 @@ camA 排除 `data/board1/1.jpg`（3456×4608），保留 2/3/4.jpg（1080×1440�
 
 ## 从 B 仓库复现
 
-本地仓库为 `camera-calibration-b`，A 交接包保持在相邻 `camera-calibration` 文件夹；不把整个交接包复制进仓库。新机器需先从 A 获取哈希匹配的 JSON。主流程默认 corners 路径兼容 README，但本次明确传入真实外部 JSON。
+从小组仓库检出 `xieyunjie-b`，在仓库根目录运行。两份真实角点已包含在 outputs/ 中，无需本机交接包路径。正式结果沿用已核查的同次求解，不因目录整理重新标定。
 
 ```bash
-cd camera-calibration-b
+git clone --branch xieyunjie-b https://github.com/HRzhangStat/camera-calibration.git
+cd camera-calibration
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
 # 先跑板 2 左相机（临时结果放仓库外）
-python src/calibrate.py --corners ../camera-calibration/outputs/corners.json --camera left --out /tmp/pj1-left.json
+python src/calibrate.py --corners outputs/corners.json --camera left --out /tmp/pj1-left.json
 # 独立标定入口示例（与后续实验是独立运行）：默认 --model fix_k3
-python src/calibrate.py --corners ../camera-calibration/outputs/corners.json
-python src/calibrate.py --corners ../camera-calibration/outputs/corners_board1.json --out outputs/calib_board1.json
+python src/calibrate.py --corners outputs/corners.json
+python src/calibrate.py --corners outputs/corners_board1.json --out outputs/calib_board1.json
 # 最终交付以实验运行同步生成的正式 JSON 和表格为准，不要再单独覆盖正式 JSON
-python experiments/exp_flags.py --corners ../camera-calibration/outputs/corners.json
-python experiments/exp_flags.py --corners ../camera-calibration/outputs/corners_board1.json
+python experiments/exp_flags.py --corners outputs/corners.json
+python experiments/exp_flags.py --corners outputs/corners_board1.json
 PYTHON=.venv/bin/python bash scripts/check.sh
 ```
 
@@ -68,7 +71,7 @@ PYTHON=.venv/bin/python bash scripts/check.sh
 
 ## 验收状态
 
-仓库语法、所有 CLI --help、calib.json 接口检查通过；由于 A JSON 在外部，原测试自动跳过默认路径 corners，本次额外对两份真实角点 JSON 和两份 calib JSON 逐份调用仓库检查函数，均通过。独立重算每张图及整体 RMS，与输出一致；四组均已用真实原图调用 cv2.undistort 检查数组尺寸。另验证错误点数、NaN、错误尺寸、错误相机、重复文件、乱序网格六类错误，两块板均拒绝。
+仓库语法、所有 CLI --help、calib.json 接口检查通过；本次两份角点均已入库，默认 corners 接口检查不再跳过；两份真实角点 JSON 和两份 calib JSON 的显式接口检查也均通过。独立重算每张图及整体 RMS，与输出一致；四组均已用真实原图调用 cv2.undistort 检查数组尺寸。另验证错误点数、NaN、错误尺寸、错误相机、重复文件、乱序网格六类错误，两块板均拒绝。
 
 C 的 evaluate.py 能读取 JSON 并打印整体 RMS，但在尚未实现的 plot_error_bars 抛出 NotImplementedError；没有修改 C 文件。D 的 undistort.py 能读取两份 JSON、计算 new_K/ROI，但实际出图仍是 TODO，本次没有声称 D 全流程完成。组长报告构建脚本因环境未安装 pandoc 无法生成 docx；保留其原文件，不扩大 B 的修改范围。
 
@@ -76,16 +79,7 @@ C 的 evaluate.py 能读取 JSON 并打印整体 RMS，但在尚未实现的 plo
 
 ## GitHub 交付状态
 
-已完成 B 专用分支的本地提交。实际 push 返回 `Permission to HRzhangStat/camera-calibration.git denied to Claudia-x`（HTTP 403），连接器亦确认 `push: false`。因此远程 B 分支尚未上传、尚无 PR 链接。组长需邀请 Claudia-x 并授予写权限（且账号接受邀请），或用户使用已有写权限账号。没有 fork、没有改用其他仓库。
-
-权限就绪后，在本仓库执行：
-
-```bash
-git push -u origin feature/xieyunjie-calibrate
-```
-
-然后从该分支向 main 创建 PR，由组长审核合并。建议标题：`[B] 完成双板分组标定与四设置对比，注明板2内参受限`。PR 说明应注明 A 真实 JSON 尚未上传、板1 camA 排除 1.jpg、板2参数不可可靠识别；附 `outputs/experiments/flags_board2.png` 产物图。不得将本地成功提交误写成已上传。
-
+现有 PR #1 的源分支为 `xieyunjie-b`，继续更新同一 PR，由组长审查合并。早期 `feature/xieyunjie-calibrate` 推送失败是历史状态，当前以本 PR 为交付入口。
 
 ## 板 2 right 的 fx 差异核查与修复
 
@@ -99,4 +93,9 @@ git push -u origin feature/xieyunjie-calibrate
 
 本次板 2 right 的正式 fx=78.295364537751，表中按 6 位有效数字显示 `78.2954`；运行标识 `3ba1e1d7-2dce-420d-af64-08afcbf899b7`。完整参数逐字段一致，不是只手改 fx。板 2 内参受限的结论保持。
 
-本次修复验收：两块板正式 JSON 均与实验 all.json 的 fix_k3 完整字典相等；各设置 CSV 内参/畸变/RMS、逐图 CSV 误差与源结果逐项一致，Markdown fx 按相同格式舍入，运行 ID 与结果哈希对应。仓库 check.sh、两份真实角点及两份 calib 契约、独立重投影 RMS 复算、真实图像 undistort 和六类异常输入检查全部通过。仓库默认路径的 corners 测试仍因外部输入而跳过，已由显式检查两份真实文件补足。
+本次修复验收：两块板正式 JSON 均与实验 all.json 的 fix_k3 完整字典相等；各设置 CSV 内参/畸变/RMS、逐图 CSV 误差与源结果逐项一致，Markdown fx 按相同格式舍入，运行 ID 与结果哈希对应。仓库 check.sh、两份真实角点及两份 calib 契约、独立重投影 RMS 复算、真实图像 undistort 和六类异常输入检查全部通过。目录整理后再次执行默认 corners 接口测试，不再跳过。
+
+
+## 给组长的技术答复
+
+`fx≈78.3` 是当前数据与求解配置下的暂定数值，不是已验证的真实焦距。迭代预算、模型设置和微小角点扰动使焦距明显变化而 RMS 几乎不变，这支持数据约束不足、内参估计病态的判断。点数/顺序、单位、图像分组、尺寸、输入哈希和误差复算检查未发现实现错误；现有检查不能绝对排除所有 bug，也没有证明具体底层数值差异的原因。报告可将“低重投影 RMS 不保证内参可靠”作为主要发现。约 160° 是把不可靠内参代入理想针孔公式得到的估算，不能当作相机真实视场角。
