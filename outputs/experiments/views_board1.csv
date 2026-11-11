@@ -1,0 +1,7 @@
+camera,file,n_total,n_train,flags,max_iter,epsilon,B_rms_px,full_rms_px,train_rms_px,validation_rms_px,fx,fy,cx,cy,fx_change_pct,fy_change_pct,B_fx_change_pct,B_fy_change_pct,status,error
+camA,data/board1/2.jpg,3,2,128,2000,1e-10,0.7964373801525578,0.7964373801525554,,,,,,,,,,,insufficient_views,留一后少于三张训练图；不生成验证误差
+camA,data/board1/3.jpg,3,2,128,2000,1e-10,0.7964373801525578,0.7964373801525554,,,,,,,,,,,insufficient_views,留一后少于三张训练图；不生成验证误差
+camA,data/board1/4.jpg,3,2,128,2000,1e-10,0.7964373801525578,0.7964373801525554,,,,,,,,,,,insufficient_views,留一后少于三张训练图；不生成验证误差
+camB,data/board1/11.jpg,3,2,128,2000,1e-10,0.9106005247652174,0.9106005247652171,,,,,,,,,,,insufficient_views,留一后少于三张训练图；不生成验证误差
+camB,data/board1/12.jpg,3,2,128,2000,1e-10,0.9106005247652174,0.9106005247652171,,,,,,,,,,,insufficient_views,留一后少于三张训练图；不生成验证误差
+camB,data/board1/18.jpg,3,2,128,2000,1e-10,0.9106005247652174,0.9106005247652171,,,,,,,,,,,insufficient_views,留一后少于三张训练图；不生成验证误差

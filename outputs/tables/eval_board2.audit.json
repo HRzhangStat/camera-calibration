@@ -1,0 +1,65 @@
+{
+  "board": "board2",
+  "corners_sha256": "bc8d9ca3823fdb25d3532c27363807648262d4722310ee1c812013d8dd0e59fe",
+  "calib_sha256": "8552860ea9399d26d88efb42404965f6a6e642e0c884e8884812e913a0941c4d",
+  "B_run_id": "3ba1e1d7-2dce-420d-af64-08afcbf899b7",
+  "B_status": "limited_intrinsic_unidentifiable",
+  "B_model": "fix_k3",
+  "input_hash_verification": {
+    "calib.json": {
+      "actual_sha256": "8552860ea9399d26d88efb42404965f6a6e642e0c884e8884812e913a0941c4d",
+      "B_expected_sha256": "8552860ea9399d26d88efb42404965f6a6e642e0c884e8884812e913a0941c4d",
+      "matching_line_endings": "exact"
+    },
+    "corners.json": {
+      "actual_sha256": "bc8d9ca3823fdb25d3532c27363807648262d4722310ee1c812013d8dd0e59fe",
+      "B_expected_sha256": "3f35b59043ab5af00f1711520438adf356183ec454df47f3c935e643ed213a55",
+      "matching_line_endings": "CRLF"
+    }
+  },
+  "runtime": {
+    "python": "3.11.5",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0"
+  },
+  "cameras": {
+    "left": {
+      "n_images": 4,
+      "n_corners_per_image": 42,
+      "rms_px": 0.09698498118652138,
+      "B_rms_px": 0.09698598841104566,
+      "max_rms_difference_px": 0.0,
+      "files": [
+        "data/board2/Im_L_1.png",
+        "data/board2/Im_L_2.png",
+        "data/board2/Im_L_3.png",
+        "data/board2/Im_L_4.png"
+      ]
+    },
+    "right": {
+      "n_images": 4,
+      "n_corners_per_image": 42,
+      "rms_px": 0.11922012037066854,
+      "B_rms_px": 0.11921878593522948,
+      "max_rms_difference_px": 0.0,
+      "files": [
+        "data/board2/Im_R_1.png",
+        "data/board2/Im_R_2.png",
+        "data/board2/Im_R_3.png",
+        "data/board2/Im_R_4.png"
+      ]
+    }
+  },
+  "image_sha256": {
+    "data/board2/Im_L_1.png": "ec4bd9bc03532736ef9aeec414f28df59ff0c0af6f0036b5d1e1b59fef1be590",
+    "data/board2/Im_L_2.png": "ba2ed16a6b3c3a7baacc09fb223d9872d20af84cb28320e046aef62a1f037236",
+    "data/board2/Im_L_3.png": "3f7d602e715fd384abd0be51a37cd05afe093f40d1568d852cac95bc86548426",
+    "data/board2/Im_L_4.png": "b07bda870e17e67ff9d7432a641d663edd8d5dd5b51674de11556c4d0ccd8ca8",
+    "data/board2/Im_R_1.png": "b2ce247c894a1ffe73e7e008fe0535e5609a5b9abf3eba98b0463b33b8e26b0a",
+    "data/board2/Im_R_2.png": "7f78475d14b16b7a5462cae57dd764837aea8b4c0eb39c5dc66188a146bcf290",
+    "data/board2/Im_R_3.png": "ee4f4291a15ba9a078ed57a1224ee0cb03c2ec2561f941cfb4810b645f0218c2",
+    "data/board2/Im_R_4.png": "b43aac787e60bb5937bce8ce8a3a846b8b4f7519daa26977011a7e8c3f7d6f1c"
+  },
+  "not_used": [],
+  "interpretation": "Training reprojection consistency only; not independent measurement accuracy."
+}

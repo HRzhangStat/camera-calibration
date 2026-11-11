@@ -1,0 +1,67 @@
+{
+  "board": "board1",
+  "corners_sha256": "1692e3eaaec4145a87d9df9ae5b98c405567e1c68cf76c9d060cd6ed4732aa38",
+  "calib_sha256": "e027fac991782569675de14378831a5f38e49558bd035003a90e32460b69251e",
+  "B_run_id": "ffe0250a-dae3-4f88-84b1-2700139df956",
+  "B_status": "provisional_small_view_subset",
+  "B_model": "fix_k3",
+  "input_hash_verification": {
+    "calib_board1.json": {
+      "actual_sha256": "e027fac991782569675de14378831a5f38e49558bd035003a90e32460b69251e",
+      "B_expected_sha256": "e027fac991782569675de14378831a5f38e49558bd035003a90e32460b69251e",
+      "matching_line_endings": "exact"
+    },
+    "corners_board1.json": {
+      "actual_sha256": "1692e3eaaec4145a87d9df9ae5b98c405567e1c68cf76c9d060cd6ed4732aa38",
+      "B_expected_sha256": "c1985938bc1a3ae07f3efc123d2dc1684cb549f845673a73fac920a05a612728",
+      "matching_line_endings": "CRLF"
+    }
+  },
+  "runtime": {
+    "python": "3.11.5",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0"
+  },
+  "cameras": {
+    "camA": {
+      "n_images": 3,
+      "n_corners_per_image": 81,
+      "rms_px": 0.7964360133746327,
+      "B_rms_px": 0.7964373801525578,
+      "max_rms_difference_px": 0.0,
+      "files": [
+        "data/board1/2.jpg",
+        "data/board1/3.jpg",
+        "data/board1/4.jpg"
+      ]
+    },
+    "camB": {
+      "n_images": 3,
+      "n_corners_per_image": 81,
+      "rms_px": 0.9105999779369556,
+      "B_rms_px": 0.9106005247652174,
+      "max_rms_difference_px": 0.0,
+      "files": [
+        "data/board1/11.jpg",
+        "data/board1/12.jpg",
+        "data/board1/18.jpg"
+      ]
+    }
+  },
+  "image_sha256": {
+    "data/board1/2.jpg": "756aeedd79525905fd16963b1e7341583fcbd9e05093eac53662aaec8089e1ab",
+    "data/board1/3.jpg": "e4975a2e994ce99d23b3d28f7a37614124cc968c329b593a8fbd66f2df5676fd",
+    "data/board1/4.jpg": "29a8e02176d270dcf81282ebd20f14320f31fcdd6de14fd3ffe8a736dd796001",
+    "data/board1/11.jpg": "bc1487db55d9b114eed5a549a287fa81d52de8e5003771d7d5a082162ce309af",
+    "data/board1/12.jpg": "f48a6c7b092b08b7a51581836a138dcaec7336228c58d7a1cd2db0602042ec93",
+    "data/board1/18.jpg": "b092851c5a7febc46046b9648ddf60f8f70add9b378fb2c629654194e5fe5f27"
+  },
+  "not_used": [
+    {
+      "camera": "camA",
+      "file": "data/board1/1.jpg",
+      "reason": "excluded: different resolution, scaling unproven"
+    }
+  ],
+  "interpretation": "Training reprojection consistency only; not independent measurement accuracy."
+}

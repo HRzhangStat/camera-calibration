@@ -1,9 +1,0 @@
-camera,file,rms_px
-demo_left,outputs/demo/images/demo_left_1.png,0.15361319688291866
-demo_left,outputs/demo/images/demo_left_2.png,0.18063937855387818
-demo_left,outputs/demo/images/demo_left_3.png,0.15086283796183717
-demo_left,outputs/demo/images/demo_left_4.png,0.1489125639039263
-demo_right,outputs/demo/images/demo_right_1.png,0.16242681986514618
-demo_right,outputs/demo/images/demo_right_2.png,0.1662225470734774
-demo_right,outputs/demo/images/demo_right_3.png,0.15516796148019696
-demo_right,outputs/demo/images/demo_right_4.png,0.15687514019069804

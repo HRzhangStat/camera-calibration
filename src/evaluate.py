@@ -8,13 +8,16 @@
 
 用法（在仓库根目录运行）:
     python src/evaluate.py --calib outputs/calib.json
+    python src/evaluate.py --all  # 按 B 实际图集评估两块板，汇总 14 张图
     python src/evaluate.py --demo  # 显式生成模拟输入，输出到 outputs/demo/
 """
 from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
+import platform
 import re
 from pathlib import Path
 
@@ -114,11 +117,30 @@ def _object_points(data: dict) -> np.ndarray:
     return objp
 
 
-def evaluate(calib_path: Path, corners_path: Path, output_dir: Path) -> list[list]:
+def _verify_audit_hash(path: Path, expected: str) -> dict:
+    """只接受原字节或可逆的 LF/CRLF 差异；不放宽角点内容校验。"""
+    raw = path.read_bytes()
+    normalized = raw.replace(b"\r\n", b"\n")
+    for mode, candidate in (("exact", raw), ("LF", normalized),
+                            ("CRLF", normalized.replace(b"\n", b"\r\n"))):
+        if hashlib.sha256(candidate).hexdigest() == expected:
+            return {"actual_sha256": hashlib.sha256(raw).hexdigest(),
+                    "B_expected_sha256": expected, "matching_line_endings": mode}
+    raise ValueError(f"{path.name}: 内容与 B 审计哈希不一致（已排除 LF/CRLF 差异）")
+
+
+def evaluate(calib_path: Path, corners_path: Path, output_dir: Path,
+             write_summary: bool = True) -> list[list]:
     """仅通过 README 约定的 JSON 交接，不 import A/B 的模块。"""
     calib = json.loads(calib_path.read_text(encoding="utf-8"))
     corners = json.loads(corners_path.read_text(encoding="utf-8"))
     objp = _object_points(corners)
+    audit_path = calib_path.with_suffix(".audit.json")
+    audit = json.loads(audit_path.read_text(encoding="utf-8")) if audit_path.exists() else None
+    hash_verification = {}
+    if audit is not None:
+        for path, field in ((calib_path, "result_sha256"), (corners_path, "corners_sha256")):
+            hash_verification[path.name] = _verify_audit_hash(path, audit[field])
     if (calib["board"] != corners["board"] or calib["pattern"] != corners["pattern"]
             or not np.isclose(float(calib["square_mm"]), float(corners["square_mm"]))):
         raise ValueError("calib.json 与 corners.json 的标定板参数不一致")
@@ -132,7 +154,7 @@ def evaluate(calib_path: Path, corners_path: Path, output_dir: Path) -> list[lis
         detected_by_key[key] = rec
 
     # 先核验所有输入，避免输入不完整时留下看似完成的图表。
-    by_camera = {}
+    by_camera, image_hashes = {}, {}
     for camera, info in calib["cameras"].items():
         if not re.fullmatch(r"[\w.-]+", camera) or camera in (".", ".."):
             raise ValueError(f"相机编号不能用于输出文件名: {camera!r}")
@@ -152,7 +174,8 @@ def evaluate(calib_path: Path, corners_path: Path, output_dir: Path) -> list[lis
             rec = detected_by_key.get((camera, filename))
             if rec is None or rec["ok"] is not True:
                 raise ValueError(f"{camera}/{filename}: 缺少成功检测的角点记录")
-            points = np.asarray(rec["corners"], dtype=np.float64)
+            # 与 A/B 的实际消费精度一致；残差平方累加仍使用 float64。
+            points = np.asarray(rec["corners"], dtype=np.float32)
             if points.shape != (len(objp), 2) or not np.isfinite(points).all():
                 raise ValueError(f"{filename}: 角点必须为 {len(objp)}×2 个有限数值")
             rvec = np.asarray(pose["rvec"], dtype=np.float64).reshape(-1)
@@ -160,32 +183,75 @@ def evaluate(calib_path: Path, corners_path: Path, output_dir: Path) -> list[lis
             if (rvec.size != 3 or tvec.size != 3 or not np.isfinite(rvec).all()
                     or not np.isfinite(tvec).all()):
                 raise ValueError(f"{filename}: 缺少有效 rvec/tvec，需 B 提供逐图外参")
-            image = cv2.imread(str(ROOT / filename))
+            raw = (ROOT / filename).read_bytes()
+            image_hashes[filename] = hashlib.sha256(raw).hexdigest()
+            image = cv2.imdecode(np.frombuffer(raw, np.uint8), cv2.IMREAD_COLOR)
             if image is None:
                 raise ValueError(f"无法读取原图: {filename}")
             size = list(image.shape[1::-1])
             if rec["image_size"] != size or info["image_size"] != size:
                 raise ValueError(f"{filename}: 原图尺寸与 A/B 的 image_size 不一致")
             projected, _ = cv2.projectPoints(objp, rvec, tvec, K, dist)
+            rotation, _ = cv2.Rodrigues(rvec)
+            if np.any((objp @ rotation.T + tvec.reshape(1, 3))[:, 2] <= 0):
+                raise ValueError(f"{filename}: 外参将棋盘点置于相机后方")
             rms = per_image_rms(points, projected)
             records.append({"file": filename, "image": image, "detected": points,
                             "projected": projected, "rms": rms})
             supplied = pose.get("rms")
-            if supplied is not None and not np.isclose(float(supplied), rms, atol=1e-3, rtol=1e-3):
-                print(f"WARNING {camera}/{filename}: B 的 RMS={supplied}，C 重算={rms:.6f}")
+            if supplied is not None and not np.isclose(float(supplied), rms, atol=2e-4, rtol=0):
+                raise ValueError(f"{camera}/{filename}: B 的 RMS={supplied}，C 重算={rms:.6f}")
         by_camera[camera] = records
 
-    rows = []
+    used = {rec["file"] for records in by_camera.values() for rec in records}
+    if audit is not None:
+        audited = {item["file"]: item for item in audit["images"] if item["reason"] == "used"}
+        if set(audited) != used:
+            raise ValueError("B 审计的 used 图集与 calib.per_image 不一致")
+        for filename in used:
+            if audited[filename]["sha256"] != image_hashes[filename]:
+                raise ValueError(f"{filename}: 原图哈希与 B 审计不一致")
+    rows, summaries = [], {}
     for camera, records in by_camera.items():
         overall = float(np.sqrt(np.mean([rec["rms"] ** 2 for rec in records])))
         supplied = calib["cameras"][camera]["rms"]
         print(f"[{camera}] C 重算整体 RMS={overall:.6f} px；B 提供 RMS={supplied}")
-        if supplied is not None and not np.isclose(float(supplied), overall, atol=1e-3, rtol=1e-3):
-            print(f"WARNING {camera}: 整体 RMS 不一致，请核对上游误差定义与图像集合")
-        plot_error_bars(camera, records, output_dir / "figures" / f"eval_{camera}_errors.png")
-        _plot_reprojections(camera, records,
+        if supplied is not None and not np.isclose(float(supplied), overall, atol=2e-4, rtol=0):
+            raise ValueError(f"{camera}: 整体 RMS 不一致，请核对上游误差定义与图像集合")
+        label = f"{calib['board']}/{camera} (training data)"
+        plot_error_bars(label, records, output_dir / "figures" / f"eval_{camera}_errors.png")
+        _plot_reprojections(label, records,
                             output_dir / "figures" / f"eval_{camera}_reprojection.png")
+        summaries[camera] = {"n_images": len(records), "n_corners_per_image": len(objp),
+                             "rms_px": overall, "B_rms_px": supplied,
+                             "max_rms_difference_px": max((abs(rec["rms"] - pose["rms"])
+                                 for rec, pose in zip(records, calib["cameras"][camera]["per_image"])
+                                 if pose.get("rms") is not None), default=0.0),
+                             "files": [rec["file"] for rec in records]}
         rows.extend([camera, rec["file"], rec["rms"]] for rec in records)
+    metadata = {"board": calib["board"], "corners_sha256": hashlib.sha256(corners_path.read_bytes()).hexdigest(),
+                "calib_sha256": hashlib.sha256(calib_path.read_bytes()).hexdigest(),
+                "B_run_id": audit.get("run_id") if audit else None,
+                "B_status": audit.get("status") if audit else "unaudited_input",
+                "B_model": audit.get("model") if audit else None,
+                "input_hash_verification": hash_verification,
+                "runtime": {"python": platform.python_version(), "numpy": np.__version__, "opencv": cv2.__version__},
+                "cameras": summaries, "image_sha256": image_hashes,
+                "not_used": [{"camera": rec["camera"], "file": rec["file"],
+                              "reason": next((item["reason"] for item in audit["images"]
+                                              if item["file"] == rec["file"]), "not in B per_image")
+                                        if audit else "not in B per_image"}
+                             for rec in corners["images"] if rec["file"] not in used],
+                "interpretation": "Training reprojection consistency only; not independent measurement accuracy."}
+    target = output_dir / "tables" / f"eval_{calib['board']}.audit.json"
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(json.dumps(metadata, ensure_ascii=False, indent=2, allow_nan=False) + "\n", encoding="utf-8")
+    if write_summary:
+        _write_summary(rows, output_dir)
+    return rows
+
+
+def _write_summary(rows: list[list], output_dir: Path) -> None:
     table = output_dir / "tables" / "eval_summary.csv"
     table.parent.mkdir(parents=True, exist_ok=True)
     with table.open("w", newline="", encoding="utf-8") as fh:
@@ -193,7 +259,27 @@ def evaluate(calib_path: Path, corners_path: Path, output_dir: Path) -> list[lis
         writer.writerow(["camera", "file", "rms_px"])
         writer.writerows(rows)
     print(f"-> {table.relative_to(ROOT) if table.is_relative_to(ROOT) else table}")
-    return rows
+
+
+def _plot_summary(rows: list[list], output_dir: Path) -> None:
+    cameras = list(dict.fromkeys(row[0] for row in rows))
+    fig, axes = plt.subplots((len(cameras) + 1) // 2, 2,
+                             figsize=(12, 3.8 * ((len(cameras) + 1) // 2)), squeeze=False)
+    for camera, ax in zip(cameras, axes.flat):
+        subset = [row for row in rows if row[0] == camera]
+        values = [row[2] for row in subset]
+        bars = ax.bar(range(len(values)), values, color="#3b82b4")
+        ax.bar_label(bars, fmt="%.4f", padding=3, fontsize=9)
+        ax.axhline(np.sqrt(np.mean(np.square(values))), linestyle="--", color="#c2410c")
+        ax.set_xticks(range(len(values)), [Path(row[1]).name for row in subset], rotation=20, ha="right")
+        ax.set(title=f"{camera}: training reprojection", ylabel="RMS (px)",
+               ylim=(0, max(max(values) * 1.3, .01)))
+        ax.grid(axis="y", alpha=.2)
+    for ax in axes.flat[len(cameras):]:
+        ax.set_axis_off()
+    fig.tight_layout()
+    fig.savefig(output_dir / "figures/eval_all_errors.png", dpi=150)
+    plt.close(fig)
 
 
 def make_demo(output_dir: Path) -> tuple[Path, Path]:
@@ -271,18 +357,29 @@ def main() -> int:
     ap.add_argument("--corners", type=Path, help="A 的 corners.json，默认 outputs/corners.json")
     ap.add_argument("--output-dir", type=Path, help="输出根目录；正常为 outputs，模拟为 outputs/demo")
     ap.add_argument("--demo", action="store_true", help="生成明确标记的模拟输入并运行评估")
+    ap.add_argument("--all", action="store_true", help="评估 B 的 board2/board1 正式结果并合并 CSV")
     args = ap.parse_args()
     if args.demo and (args.corners or args.calib):
         ap.error("--demo 不能与 --corners/--calib 同时使用")
+    if args.all and (args.demo or args.corners or args.calib):
+        ap.error("--all 不能与 --demo/--corners/--calib 同时使用")
     output_dir = (args.output_dir or (OUTPUTS / "demo" if args.demo else OUTPUTS)).resolve()
     cv2.setNumThreads(1)
     try:
-        if args.demo:
+        if args.all:
+            rows = []
+            for suffix in ("", "_board1"):
+                rows.extend(evaluate(OUTPUTS / f"calib{suffix}.json", OUTPUTS / f"corners{suffix}.json",
+                                     output_dir, write_summary=False))
+            _write_summary(rows, output_dir)
+            _plot_summary(rows, output_dir)
+        elif args.demo:
             corners_path, calib_path = make_demo(output_dir)
+            evaluate(calib_path, corners_path, output_dir)
         else:
             corners_path = args.corners or OUTPUTS / "corners.json"
             calib_path = args.calib or OUTPUTS / "calib.json"
-        evaluate(calib_path, corners_path, output_dir)
+            evaluate(calib_path, corners_path, output_dir)
     except (OSError, ValueError, KeyError, TypeError, cv2.error) as exc:
         ap.exit(2, f"评估失败: {exc}\n")
     return 0

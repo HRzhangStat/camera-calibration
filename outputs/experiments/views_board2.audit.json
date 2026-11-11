@@ -1,0 +1,166 @@
+{
+  "board": "board2",
+  "corners_sha256": "bc8d9ca3823fdb25d3532c27363807648262d4722310ee1c812013d8dd0e59fe",
+  "calib_sha256": "8552860ea9399d26d88efb42404965f6a6e642e0c884e8884812e913a0941c4d",
+  "B_run_id": "3ba1e1d7-2dce-420d-af64-08afcbf899b7",
+  "B_status": "limited_intrinsic_unidentifiable",
+  "input_hash_verification": {
+    "corners.json": {
+      "actual_sha256": "bc8d9ca3823fdb25d3532c27363807648262d4722310ee1c812013d8dd0e59fe",
+      "B_expected_sha256": "3f35b59043ab5af00f1711520438adf356183ec454df47f3c935e643ed213a55",
+      "matching_line_endings": "CRLF"
+    },
+    "calib.json": {
+      "actual_sha256": "8552860ea9399d26d88efb42404965f6a6e642e0c884e8884812e913a0941c4d",
+      "B_expected_sha256": "8552860ea9399d26d88efb42404965f6a6e642e0c884e8884812e913a0941c4d",
+      "matching_line_endings": "exact"
+    }
+  },
+  "settings": {
+    "flags": 128,
+    "max_iterations": 2000,
+    "epsilon": 1e-10,
+    "initial_cameraMatrix": null,
+    "initial_distCoeffs": null,
+    "min_train_views": 3
+  },
+  "runtime": {
+    "python": "3.11.5",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0",
+    "opencv_threads": 8,
+    "opencv_build_sha256": "0ef08003c31127b3b5d34410ab13483c511e73b99e278b1a8abd6ddcb265699a"
+  },
+  "B_runtime": {
+    "python": "3.11.5",
+    "numpy": "2.4.6",
+    "opencv": "5.0.0",
+    "opencv_threads": 8,
+    "opencv_build_sha256": "ca056069608fa981f74a01de3ba432a4d0395d8eb8de2bcbbc279f3cc02ce46d"
+  },
+  "files": {
+    "left": [
+      "data/board2/Im_L_1.png",
+      "data/board2/Im_L_2.png",
+      "data/board2/Im_L_3.png",
+      "data/board2/Im_L_4.png"
+    ],
+    "right": [
+      "data/board2/Im_R_1.png",
+      "data/board2/Im_R_2.png",
+      "data/board2/Im_R_3.png",
+      "data/board2/Im_R_4.png"
+    ]
+  },
+  "image_sha256": {
+    "data/board2/Im_L_1.png": "ec4bd9bc03532736ef9aeec414f28df59ff0c0af6f0036b5d1e1b59fef1be590",
+    "data/board2/Im_L_2.png": "ba2ed16a6b3c3a7baacc09fb223d9872d20af84cb28320e046aef62a1f037236",
+    "data/board2/Im_L_3.png": "3f7d602e715fd384abd0be51a37cd05afe093f40d1568d852cac95bc86548426",
+    "data/board2/Im_L_4.png": "b07bda870e17e67ff9d7432a641d663edd8d5dd5b51674de11556c4d0ccd8ca8",
+    "data/board2/Im_R_1.png": "b2ce247c894a1ffe73e7e008fe0535e5609a5b9abf3eba98b0463b33b8e26b0a",
+    "data/board2/Im_R_2.png": "7f78475d14b16b7a5462cae57dd764837aea8b4c0eb39c5dc66188a146bcf290",
+    "data/board2/Im_R_3.png": "ee4f4291a15ba9a078ed57a1224ee0cb03c2ec2561f941cfb4810b645f0218c2",
+    "data/board2/Im_R_4.png": "b43aac787e60bb5937bce8ce8a3a846b8b4f7519daa26977011a7e8c3f7d6f1c"
+  },
+  "excluded": [],
+  "full_fit_controls": {
+    "left": {
+      "rms_px": 0.09698598841104576,
+      "K": [
+        [
+          260.8196992389805,
+          0.0,
+          517.6894448719759
+        ],
+        [
+          0.0,
+          264.0172666963233,
+          300.02315945559775
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "dist": [
+        0.005539907200814933,
+        -0.002321693795296635,
+        -2.412570166022389e-05,
+        0.0013827279391908232,
+        0.0
+      ],
+      "B_rms_px": 0.09698598841104566,
+      "B_K": [
+        [
+          260.8179638124037,
+          0.0,
+          517.6894479807548
+        ],
+        [
+          0.0,
+          264.0155097963395,
+          300.0231703936518
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "fx_difference_from_B_pct": 0.0006653784698773535,
+      "fy_difference_from_B_pct": 0.0006654533232453019
+    },
+    "right": {
+      "rms_px": 0.11921925567342737,
+      "K": [
+        [
+          82.70637458324073,
+          0.0,
+          479.71940091212616
+        ],
+        [
+          0.0,
+          83.79631605049487,
+          279.5248857644977
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "dist": [
+        0.00029596492782507145,
+        -1.5938538290436756e-05,
+        -8.269958195033665e-07,
+        -0.00015300071305929654,
+        0.0
+      ],
+      "B_rms_px": 0.11921878593522948,
+      "B_K": [
+        [
+          78.29536453775145,
+          0.0,
+          479.6907211601008
+        ],
+        [
+          0.0,
+          79.32709150295334,
+          279.50683120164047
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "fx_difference_from_B_pct": 5.633807405497726,
+      "fy_difference_from_B_pct": 5.633919588965575
+    }
+  },
+  "fold_status_counts": {
+    "ok": 8
+  },
+  "interpretation": "Pose-conditioned held-out-view reprojection. Compare focal changes to same-runtime full fit; B comparison exported separately. Not independent 3D measurement accuracy."
+}
