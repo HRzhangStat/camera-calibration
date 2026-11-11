@@ -1,0 +1,15 @@
+camera,file,rms_px
+left,data/board2/Im_L_1.png,0.098893000119405
+left,data/board2/Im_L_2.png,0.09367279646487067
+left,data/board2/Im_L_3.png,0.09332117382124376
+left,data/board2/Im_L_4.png,0.10178942258142107
+right,data/board2/Im_R_1.png,0.13531325465483168
+right,data/board2/Im_R_2.png,0.09803029678117316
+right,data/board2/Im_R_3.png,0.11745172434518762
+right,data/board2/Im_R_4.png,0.12304155753582051
+camA,data/board1/2.jpg,0.8401364611522556
+camA,data/board1/3.jpg,0.8790314048155982
+camA,data/board1/4.jpg,0.651464109671987
+camB,data/board1/11.jpg,0.7703005367027025
+camB,data/board1/12.jpg,0.9979105909611818
+camB,data/board1/18.jpg,0.9478335798331821
