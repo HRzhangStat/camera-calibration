@@ -1,0 +1,4 @@
+﻿method,total_images,raw_success,success_after_retry,median_ms,repeatability_images,median_repeatability_px,dark_success,blur_success,common_images,median_perturbation_rms_px
+Classic,8,8,8,1.8715500000325846,8,0.0,8,8,8,0.04939183359965682
+SB,8,8,8,129.64795000016238,8,0.0,8,8,8,0.03360532410442829
+SB + SubPix,8,8,8,127.34674999978779,8,0.0,8,8,8,0.026154800783842802

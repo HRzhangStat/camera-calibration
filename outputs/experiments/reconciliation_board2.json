@@ -1,0 +1,284 @@
+{
+  "historical_formal_right": {
+    "image_size": [
+      1024,
+      576
+    ],
+    "K": [
+      [
+        83.33292443633762,
+        0.0,
+        479.72360188403513
+      ],
+      [
+        0.0,
+        84.43113598841502,
+        279.52753039955275
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "dist": [
+      0.00030043412972987374,
+      -1.6426375493509836e-05,
+      -8.567524819139726e-07,
+      -0.00015413444457037162,
+      0.0
+    ],
+    "rms": 0.11921932461112252,
+    "per_image": [
+      {
+        "file": "data/board2/Im_R_1.png",
+        "rms": 0.1353129313819229,
+        "rvec": [
+          -0.0005179279871596212,
+          -0.0022614640707275062,
+          0.013369240738042217
+        ],
+        "tvec": [
+          -19.046919328545293,
+          -126.81258361454573,
+          61.74093139100617
+        ]
+      },
+      {
+        "file": "data/board2/Im_R_2.png",
+        "rms": 0.09802786288595002,
+        "rvec": [
+          -0.0009426458936544269,
+          -0.0029932471073661404,
+          -0.22708229866920496
+        ],
+        "tvec": [
+          -9.58762442812926,
+          -90.06619742088449,
+          61.692314572798594
+        ]
+      },
+      {
+        "file": "data/board2/Im_R_3.png",
+        "rms": 0.11745192115244293,
+        "rvec": [
+          -6.1138199339934045e-06,
+          -0.004153857076242954,
+          -0.05766992057074448
+        ],
+        "tvec": [
+          -8.45222589768126,
+          -105.43768843516436,
+          60.389243894048676
+        ]
+      },
+      {
+        "file": "data/board2/Im_R_4.png",
+        "rms": 0.12304347170454986,
+        "rvec": [
+          0.005723567700811422,
+          -0.0037738622060181,
+          -0.017730643715541762
+        ],
+        "tvec": [
+          6.14010827503474,
+          -117.98666655967155,
+          59.85190606049305
+        ]
+      }
+    ]
+  },
+  "historical_comparison_right": {
+    "image_size": [
+      1024,
+      576
+    ],
+    "K": [
+      [
+        80.62214479430229,
+        0.0,
+        479.7056540657714
+      ],
+      [
+        0.0,
+        81.68457777527769,
+        279.51623174250983
+      ],
+      [
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "dist": [
+      0.0002813340582639608,
+      -1.4393503984012065e-05,
+      -7.317917655262507e-07,
+      -0.00014922526282966847,
+      0.0
+    ],
+    "rms": 0.1192190303222905,
+    "per_image": [
+      {
+        "file": "data/board2/Im_R_1.png",
+        "rms": 0.13531293438287575,
+        "rvec": [
+          -0.0005009156967388117,
+          -0.0021880148522272435,
+          0.013369304206915851
+        ],
+        "tvec": [
+          -19.033614742381022,
+          -126.80432539318363,
+          59.732467354837276
+        ]
+      },
+      {
+        "file": "data/board2/Im_R_2.png",
+        "rms": 0.09803081965978264,
+        "rvec": [
+          -0.0009118791961478397,
+          -0.002895877815539747,
+          -0.2270820656240905
+        ],
+        "tvec": [
+          -9.57432448871254,
+          -90.05796163133977,
+          59.68545651105194
+        ]
+      },
+      {
+        "file": "data/board2/Im_R_3.png",
+        "rms": 0.11745010256957819,
+        "rvec": [
+          -5.822118733188584e-06,
+          -0.004018854724082474,
+          -0.0576697248441392
+        ],
+        "tvec": [
+          -8.439208184290196,
+          -105.42960033943704,
+          58.42475297937275
+        ]
+      },
+      {
+        "file": "data/board2/Im_R_4.png",
+        "rms": 0.1230432915282894,
+        "rvec": [
+          0.005537494460635943,
+          -0.0036511264706407774,
+          -0.017731110779556334
+        ],
+        "tvec": [
+          6.153008499274063,
+          -117.9786879256178,
+          57.90491102319391
+        ]
+      }
+    ]
+  },
+  "formal_audit": {
+    "corners_file": "corners.json",
+    "corners_sha256": "3f35b59043ab5af00f1711520438adf356183ec454df47f3c935e643ed213a55",
+    "model": "fix_k3",
+    "flags": 128,
+    "opencv": "5.0.0",
+    "numpy": "2.4.6",
+    "python": "3.11.5",
+    "images": [
+      {
+        "file": "data/board2/Im_L_1.png",
+        "camera": "left",
+        "image_size": [
+          1024,
+          576
+        ],
+        "sha256": "ec4bd9bc03532736ef9aeec414f28df59ff0c0af6f0036b5d1e1b59fef1be590",
+        "reason": "used"
+      },
+      {
+        "file": "data/board2/Im_L_2.png",
+        "camera": "left",
+        "image_size": [
+          1024,
+          576
+        ],
+        "sha256": "ba2ed16a6b3c3a7baacc09fb223d9872d20af84cb28320e046aef62a1f037236",
+        "reason": "used"
+      },
+      {
+        "file": "data/board2/Im_L_3.png",
+        "camera": "left",
+        "image_size": [
+          1024,
+          576
+        ],
+        "sha256": "3f7d602e715fd384abd0be51a37cd05afe093f40d1568d852cac95bc86548426",
+        "reason": "used"
+      },
+      {
+        "file": "data/board2/Im_L_4.png",
+        "camera": "left",
+        "image_size": [
+          1024,
+          576
+        ],
+        "sha256": "b07bda870e17e67ff9d7432a641d663edd8d5dd5b51674de11556c4d0ccd8ca8",
+        "reason": "used"
+      },
+      {
+        "file": "data/board2/Im_R_1.png",
+        "camera": "right",
+        "image_size": [
+          1024,
+          576
+        ],
+        "sha256": "b2ce247c894a1ffe73e7e008fe0535e5609a5b9abf3eba98b0463b33b8e26b0a",
+        "reason": "used"
+      },
+      {
+        "file": "data/board2/Im_R_2.png",
+        "camera": "right",
+        "image_size": [
+          1024,
+          576
+        ],
+        "sha256": "7f78475d14b16b7a5462cae57dd764837aea8b4c0eb39c5dc66188a146bcf290",
+        "reason": "used"
+      },
+      {
+        "file": "data/board2/Im_R_3.png",
+        "camera": "right",
+        "image_size": [
+          1024,
+          576
+        ],
+        "sha256": "ee4f4291a15ba9a078ed57a1224ee0cb03c2ec2561f941cfb4810b645f0218c2",
+        "reason": "used"
+      },
+      {
+        "file": "data/board2/Im_R_4.png",
+        "camera": "right",
+        "image_size": [
+          1024,
+          576
+        ],
+        "sha256": "b43aac787e60bb5937bce8ce8a3a846b8b4f7519daa26977011a7e8c3f7d6f1c",
+        "reason": "used"
+      }
+    ],
+    "solver": {
+      "max_iterations": 2000,
+      "epsilon": 1e-10
+    },
+    "status": "limited_intrinsic_unidentifiable",
+    "resolution_policy": "Unique largest same-resolution subset; no pixel scaling",
+    "limitations": "Only 3-4 views per camera. Provisional parameters, no held-out accuracy claim. Use only listed files/resolution; do not transfer between camera groups."
+  },
+  "artifacts_sha256": {
+    "outputs/calib.json": "f47227feadfe257c71bc6c5824dd52782d143dc5a47dbf56c6233ed932d79e2d",
+    "outputs/experiments/flags_board2_all.json": "5de246989a16fe12579adeb60928d3de3c226e0a7b35c20ad8d319206af140ad",
+    "outputs/experiments/flags_board2.md": "9a0d389553f2694bd0546e95ad225af0ad109c1e1bb01d76164e2c6cdcad5827"
+  },
+  "finding": "Separate CLI invocations, same configured input/flags/initialization/criteria. Historical experiment subprocess audit was discarded; exact numerical cause cannot be established from saved artifacts."
+}

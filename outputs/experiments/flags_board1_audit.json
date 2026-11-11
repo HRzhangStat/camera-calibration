@@ -1,0 +1,394 @@
+{
+  "default": {
+    "run_id": "d92873b3-2f70-4231-be6c-a21e264692ca",
+    "result_sha256": "59aa14717e8a493f148dde6ee5c7aed3a40424b3ea7d33cbd55af90bccfb6bc7",
+    "initialization": {
+      "cameraMatrix": null,
+      "distCoeffs": null,
+      "use_intrinsic_guess": false
+    },
+    "object_points_sha256": "938200fe999aa9cc7a31199b07e46565850c046c62ea9f1cb030e961fa216281",
+    "opencv_build_sha256": "ca056069608fa981f74a01de3ba432a4d0395d8eb8de2bcbbc279f3cc02ce46d",
+    "opencv_threads": 8,
+    "corners_file": "corners_board1.json",
+    "corners_sha256": "c1985938bc1a3ae07f3efc123d2dc1684cb549f845673a73fac920a05a612728",
+    "model": "default",
+    "flags": 0,
+    "opencv": "5.0.0",
+    "numpy": "2.4.6",
+    "python": "3.11.5",
+    "images": [
+      {
+        "file": "data/board1/1.jpg",
+        "camera": "camA",
+        "image_size": [
+          3456,
+          4608
+        ],
+        "sha256": "8773ca66de2a34c0571d03cdb6d6b7474953b5bf6b7f03fd8c4a6815c9401105",
+        "reason": "excluded: different resolution, scaling unproven"
+      },
+      {
+        "file": "data/board1/2.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "756aeedd79525905fd16963b1e7341583fcbd9e05093eac53662aaec8089e1ab",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/3.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "e4975a2e994ce99d23b3d28f7a37614124cc968c329b593a8fbd66f2df5676fd",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/4.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "29a8e02176d270dcf81282ebd20f14320f31fcdd6de14fd3ffe8a736dd796001",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/11.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "bc1487db55d9b114eed5a549a287fa81d52de8e5003771d7d5a082162ce309af",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/12.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "f48a6c7b092b08b7a51581836a138dcaec7336228c58d7a1cd2db0602042ec93",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/18.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "b092851c5a7febc46046b9648ddf60f8f70add9b378fb2c629654194e5fe5f27",
+        "reason": "used"
+      }
+    ],
+    "solver": {
+      "max_iterations": 2000,
+      "epsilon": 1e-10
+    },
+    "status": "provisional_small_view_subset",
+    "resolution_policy": "Unique largest same-resolution subset; no pixel scaling",
+    "limitations": "Only 3-4 views per camera. Provisional parameters, no held-out accuracy claim. Use only listed files/resolution; do not transfer between camera groups."
+  },
+  "fix_k3": {
+    "run_id": "ffe0250a-dae3-4f88-84b1-2700139df956",
+    "result_sha256": "e027fac991782569675de14378831a5f38e49558bd035003a90e32460b69251e",
+    "initialization": {
+      "cameraMatrix": null,
+      "distCoeffs": null,
+      "use_intrinsic_guess": false
+    },
+    "object_points_sha256": "938200fe999aa9cc7a31199b07e46565850c046c62ea9f1cb030e961fa216281",
+    "opencv_build_sha256": "ca056069608fa981f74a01de3ba432a4d0395d8eb8de2bcbbc279f3cc02ce46d",
+    "opencv_threads": 8,
+    "corners_file": "corners_board1.json",
+    "corners_sha256": "c1985938bc1a3ae07f3efc123d2dc1684cb549f845673a73fac920a05a612728",
+    "model": "fix_k3",
+    "flags": 128,
+    "opencv": "5.0.0",
+    "numpy": "2.4.6",
+    "python": "3.11.5",
+    "images": [
+      {
+        "file": "data/board1/1.jpg",
+        "camera": "camA",
+        "image_size": [
+          3456,
+          4608
+        ],
+        "sha256": "8773ca66de2a34c0571d03cdb6d6b7474953b5bf6b7f03fd8c4a6815c9401105",
+        "reason": "excluded: different resolution, scaling unproven"
+      },
+      {
+        "file": "data/board1/2.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "756aeedd79525905fd16963b1e7341583fcbd9e05093eac53662aaec8089e1ab",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/3.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "e4975a2e994ce99d23b3d28f7a37614124cc968c329b593a8fbd66f2df5676fd",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/4.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "29a8e02176d270dcf81282ebd20f14320f31fcdd6de14fd3ffe8a736dd796001",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/11.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "bc1487db55d9b114eed5a549a287fa81d52de8e5003771d7d5a082162ce309af",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/12.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "f48a6c7b092b08b7a51581836a138dcaec7336228c58d7a1cd2db0602042ec93",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/18.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "b092851c5a7febc46046b9648ddf60f8f70add9b378fb2c629654194e5fe5f27",
+        "reason": "used"
+      }
+    ],
+    "solver": {
+      "max_iterations": 2000,
+      "epsilon": 1e-10
+    },
+    "status": "provisional_small_view_subset",
+    "resolution_policy": "Unique largest same-resolution subset; no pixel scaling",
+    "limitations": "Only 3-4 views per camera. Provisional parameters, no held-out accuracy claim. Use only listed files/resolution; do not transfer between camera groups."
+  },
+  "zero_tangent": {
+    "run_id": "7fa29e11-230c-4419-beda-631fcc3947d5",
+    "result_sha256": "981db6770e4ec39ca4a69514ddca8f4011db860f2eb31cfe0ade0783dd14fde6",
+    "initialization": {
+      "cameraMatrix": null,
+      "distCoeffs": null,
+      "use_intrinsic_guess": false
+    },
+    "object_points_sha256": "938200fe999aa9cc7a31199b07e46565850c046c62ea9f1cb030e961fa216281",
+    "opencv_build_sha256": "ca056069608fa981f74a01de3ba432a4d0395d8eb8de2bcbbc279f3cc02ce46d",
+    "opencv_threads": 8,
+    "corners_file": "corners_board1.json",
+    "corners_sha256": "c1985938bc1a3ae07f3efc123d2dc1684cb549f845673a73fac920a05a612728",
+    "model": "zero_tangent",
+    "flags": 8,
+    "opencv": "5.0.0",
+    "numpy": "2.4.6",
+    "python": "3.11.5",
+    "images": [
+      {
+        "file": "data/board1/1.jpg",
+        "camera": "camA",
+        "image_size": [
+          3456,
+          4608
+        ],
+        "sha256": "8773ca66de2a34c0571d03cdb6d6b7474953b5bf6b7f03fd8c4a6815c9401105",
+        "reason": "excluded: different resolution, scaling unproven"
+      },
+      {
+        "file": "data/board1/2.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "756aeedd79525905fd16963b1e7341583fcbd9e05093eac53662aaec8089e1ab",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/3.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "e4975a2e994ce99d23b3d28f7a37614124cc968c329b593a8fbd66f2df5676fd",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/4.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "29a8e02176d270dcf81282ebd20f14320f31fcdd6de14fd3ffe8a736dd796001",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/11.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "bc1487db55d9b114eed5a549a287fa81d52de8e5003771d7d5a082162ce309af",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/12.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "f48a6c7b092b08b7a51581836a138dcaec7336228c58d7a1cd2db0602042ec93",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/18.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "b092851c5a7febc46046b9648ddf60f8f70add9b378fb2c629654194e5fe5f27",
+        "reason": "used"
+      }
+    ],
+    "solver": {
+      "max_iterations": 2000,
+      "epsilon": 1e-10
+    },
+    "status": "provisional_small_view_subset",
+    "resolution_policy": "Unique largest same-resolution subset; no pixel scaling",
+    "limitations": "Only 3-4 views per camera. Provisional parameters, no held-out accuracy claim. Use only listed files/resolution; do not transfer between camera groups."
+  },
+  "fix_k3+zero_tangent": {
+    "run_id": "b294ea46-d217-4209-afaf-a5af2d3a8617",
+    "result_sha256": "e1bf4cca1eee6824e5ec141a29ba7c2c8df985dc638bada7bc45c45bf8b1fe99",
+    "initialization": {
+      "cameraMatrix": null,
+      "distCoeffs": null,
+      "use_intrinsic_guess": false
+    },
+    "object_points_sha256": "938200fe999aa9cc7a31199b07e46565850c046c62ea9f1cb030e961fa216281",
+    "opencv_build_sha256": "ca056069608fa981f74a01de3ba432a4d0395d8eb8de2bcbbc279f3cc02ce46d",
+    "opencv_threads": 8,
+    "corners_file": "corners_board1.json",
+    "corners_sha256": "c1985938bc1a3ae07f3efc123d2dc1684cb549f845673a73fac920a05a612728",
+    "model": "fix_k3+zero_tangent",
+    "flags": 136,
+    "opencv": "5.0.0",
+    "numpy": "2.4.6",
+    "python": "3.11.5",
+    "images": [
+      {
+        "file": "data/board1/1.jpg",
+        "camera": "camA",
+        "image_size": [
+          3456,
+          4608
+        ],
+        "sha256": "8773ca66de2a34c0571d03cdb6d6b7474953b5bf6b7f03fd8c4a6815c9401105",
+        "reason": "excluded: different resolution, scaling unproven"
+      },
+      {
+        "file": "data/board1/2.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "756aeedd79525905fd16963b1e7341583fcbd9e05093eac53662aaec8089e1ab",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/3.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "e4975a2e994ce99d23b3d28f7a37614124cc968c329b593a8fbd66f2df5676fd",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/4.jpg",
+        "camera": "camA",
+        "image_size": [
+          1080,
+          1440
+        ],
+        "sha256": "29a8e02176d270dcf81282ebd20f14320f31fcdd6de14fd3ffe8a736dd796001",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/11.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "bc1487db55d9b114eed5a549a287fa81d52de8e5003771d7d5a082162ce309af",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/12.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "f48a6c7b092b08b7a51581836a138dcaec7336228c58d7a1cd2db0602042ec93",
+        "reason": "used"
+      },
+      {
+        "file": "data/board1/18.jpg",
+        "camera": "camB",
+        "image_size": [
+          1440,
+          1080
+        ],
+        "sha256": "b092851c5a7febc46046b9648ddf60f8f70add9b378fb2c629654194e5fe5f27",
+        "reason": "used"
+      }
+    ],
+    "solver": {
+      "max_iterations": 2000,
+      "epsilon": 1e-10
+    },
+    "status": "provisional_small_view_subset",
+    "resolution_policy": "Unique largest same-resolution subset; no pixel scaling",
+    "limitations": "Only 3-4 views per camera. Provisional parameters, no held-out accuracy claim. Use only listed files/resolution; do not transfer between camera groups."
+  }
+}
