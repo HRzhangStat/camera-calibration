@@ -148,7 +148,8 @@ def _mark_long_edges(image: np.ndarray, max_lines: int = 5) -> None:
     if lines is None:
         return
     candidates = []
-    for x1, y1, x2, y2 in lines[:, 0]:
+    # OpenCV 4.x 返回 (N, 1, 4)，5.0 起返回 (N, 4)：统一 reshape 后逐行解包。
+    for x1, y1, x2, y2 in np.asarray(lines).reshape(-1, 4):
         length = math.hypot(x2 - x1, y2 - y1)
         angle = math.atan2(y2 - y1, x2 - x1) % math.pi
         midpoint = np.asarray(((x1 + x2) / 2, (y1 + y2) / 2))
