@@ -30,5 +30,11 @@ if [ -f "$TEMPLATE" ]; then
 fi
 
 pandoc "${ARGS[@]}"
+
+# 后处理：禁止表格行跨页断开（pandoc 不暴露该选项）
+if command -v python3 >/dev/null 2>&1; then
+  python3 "$ROOT/scripts/fix_docx_tables.py" "$OUT"
+fi
+
 echo
 echo "已生成: $OUT"
