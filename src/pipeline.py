@@ -21,18 +21,24 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PY = sys.executable
 
+BOARD_FILES = {
+    "board2": {"corners": "outputs/corners.json", "calib": "outputs/calib.json"},
+    "board1": {"corners": "outputs/corners_board1.json", "calib": "outputs/calib_board1.json"},
+}
+
 STEPS = {
-    "detect": ["src/detect_corners.py", "--board", "{board}"],
-    "calibrate": ["src/calibrate.py"],
-    "evaluate": ["src/evaluate.py"],
-    "undistort": ["src/undistort.py"],
+    "detect": ["src/detect_corners.py", "--board", "{board}", "--out", "{corners}"],
+    "calibrate": ["src/calibrate.py", "--corners", "{corners}", "--out", "{calib}"],
+    "evaluate": ["src/evaluate.py", "--all"],
+    "undistort": ["src/undistort.py", "--calib", "{calib}"],
     "tables": ["src/report_tables.py"],
 }
 
 
 def run_step(name: str, board: str) -> bool:
-    """跑一步，返回是否成功。TODO(组长): 加日志文件、失败重试、耗时统计。"""
-    cmd = [PY] + [a.format(board=board) for a in STEPS[name]]
+    """跑一步，返回是否成功。"""
+    fmt = {"board": board, **BOARD_FILES[board]}
+    cmd = [PY] + [a.format(**fmt) for a in STEPS[name]]
     print(f"\n=== [{name}] {' '.join(cmd)}")
     t0 = time.time()
     proc = subprocess.run(cmd, cwd=ROOT)
