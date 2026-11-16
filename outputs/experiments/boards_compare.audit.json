@@ -1,0 +1,375 @@
+{
+  "schema_version": 1,
+  "environment": {
+    "python": "3.13.11",
+    "opencv": "4.13.0",
+    "numpy": "1.26.4",
+    "matplotlib": "3.10.8"
+  },
+  "definitions": {
+    "coverage_ratio": "Area of quadrilateral formed by outer detected corners / image area.",
+    "cell_px": "Mean Euclidean distance over horizontal and vertical adjacent detected corners.",
+    "selection": "Only calib.cameras[*].per_image.file records are included."
+  },
+  "limitations": [
+    "Board groups use different cameras/resolutions and are not a controlled causal experiment.",
+    "board2 coverage describes the delivered 7x6 subgrid, not the full physical board.",
+    "Training RMS does not establish held-out accuracy or intrinsic identifiability."
+  ],
+  "results": [
+    {
+      "board": "board1",
+      "pattern": [
+        9,
+        9
+      ],
+      "square_mm": 50.0,
+      "calib": "/root/camera-calibration/outputs/calib_board1.json",
+      "calib_sha256": "e027fac991782569675de14378831a5f38e49558bd035003a90e32460b69251e",
+      "corners": "/root/camera-calibration/outputs/corners_board1.json",
+      "corners_sha256": "1692e3eaaec4145a87d9df9ae5b98c405567e1c68cf76c9d060cd6ed4732aa38",
+      "rows": [
+        {
+          "board": "board1",
+          "camera": "camA",
+          "pattern": "9x9",
+          "square_mm": 50.0,
+          "image_count": 3,
+          "image_width": 1080,
+          "image_height": 1440,
+          "corners_per_image": 81,
+          "coverage_mean_pct": 33.13130361113,
+          "coverage_std_pct": 2.6475817732590308,
+          "coverage_min_pct": 30.74153416324739,
+          "coverage_max_pct": 36.82244260068915,
+          "cell_px_mean": 89.49559696456356,
+          "cell_px_std_between_images": 3.55745252323398,
+          "rms_px": 0.7964373801525578,
+          "fx_px": 1034.3015267520698,
+          "fy_px": 1036.2285535265144,
+          "cx_px": 539.5904522517192,
+          "cy_px": 711.0580997904493,
+          "fx_over_width": 0.957686598844509,
+          "fy_over_height": 0.7196031621711906,
+          "k1": 0.05036266436127172,
+          "k2": -0.07978990867398217,
+          "p1": -0.0036908252292567113,
+          "p2": -0.0016718526044610664,
+          "k3": 0.0
+        },
+        {
+          "board": "board1",
+          "camera": "camB",
+          "pattern": "9x9",
+          "square_mm": 50.0,
+          "image_count": 3,
+          "image_width": 1440,
+          "image_height": 1080,
+          "corners_per_image": 81,
+          "coverage_mean_pct": 19.838013688830618,
+          "coverage_std_pct": 4.34892237418664,
+          "coverage_min_pct": 14.56100717756788,
+          "coverage_max_pct": 25.21231489663604,
+          "cell_px_mean": 68.9514719175731,
+          "cell_px_std_between_images": 7.647843094271064,
+          "rms_px": 0.9106005247652174,
+          "fx_px": 1083.913739005787,
+          "fy_px": 1079.0005122265475,
+          "cx_px": 729.9526245601597,
+          "cy_px": 537.4929986039932,
+          "fx_over_width": 0.7527178743095743,
+          "fy_over_height": 0.9990745483579143,
+          "k1": 0.1600667934172051,
+          "k2": -0.3856542082277714,
+          "p1": 0.0019164234621973466,
+          "p2": 0.002235192415933073,
+          "k3": 0.0
+        }
+      ],
+      "images": [
+        {
+          "board": "board1",
+          "camera": "camA",
+          "file": "data/board1/2.jpg",
+          "image_size": [
+            1080,
+            1440
+          ],
+          "coverage_ratio": 0.3182993406945345,
+          "cell_px_mean": 87.77465623190811,
+          "cell_px_std": 5.542934521123546,
+          "cell_px_min": 76.0717431224101,
+          "cell_px_max": 100.65633136518909,
+          "per_image_rms_px": 0.8401364611522556
+        },
+        {
+          "board": "board1",
+          "camera": "camA",
+          "file": "data/board1/3.jpg",
+          "image_size": [
+            1080,
+            1440
+          ],
+          "coverage_ratio": 0.3682244260068915,
+          "cell_px_mean": 94.45020642581848,
+          "cell_px_std": 5.711190893076723,
+          "cell_px_min": 83.11567690899376,
+          "cell_px_max": 108.30921004824384,
+          "per_image_rms_px": 0.8790314048155982
+        },
+        {
+          "board": "board1",
+          "camera": "camA",
+          "file": "data/board1/4.jpg",
+          "image_size": [
+            1080,
+            1440
+          ],
+          "coverage_ratio": 0.3074153416324739,
+          "cell_px_mean": 86.2619282359641,
+          "cell_px_std": 2.785893290229802,
+          "cell_px_min": 80.80180145866272,
+          "cell_px_max": 92.63348264579794,
+          "per_image_rms_px": 0.651464109671987
+        },
+        {
+          "board": "board1",
+          "camera": "camB",
+          "file": "data/board1/11.jpg",
+          "image_size": [
+            1440,
+            1080
+          ],
+          "coverage_ratio": 0.1456100717756788,
+          "cell_px_mean": 59.36863366460474,
+          "cell_px_std": 5.462890363075689,
+          "cell_px_min": 49.07304859610932,
+          "cell_px_max": 71.41529343591468,
+          "per_image_rms_px": 0.7703005367027025
+        },
+        {
+          "board": "board1",
+          "camera": "camB",
+          "file": "data/board1/12.jpg",
+          "image_size": [
+            1440,
+            1080
+          ],
+          "coverage_ratio": 0.1974071899228794,
+          "cell_px_mean": 69.39994685204091,
+          "cell_px_std": 9.628863662421702,
+          "cell_px_min": 51.58587666632448,
+          "cell_px_max": 97.3220114896353,
+          "per_image_rms_px": 0.9979105909611818
+        },
+        {
+          "board": "board1",
+          "camera": "camB",
+          "file": "data/board1/18.jpg",
+          "image_size": [
+            1440,
+            1080
+          ],
+          "coverage_ratio": 0.2521231489663604,
+          "cell_px_mean": 78.08583523607369,
+          "cell_px_std": 13.293439280093034,
+          "cell_px_min": 55.43726262604353,
+          "cell_px_max": 111.40269011388214,
+          "per_image_rms_px": 0.9478335798331821
+        }
+      ]
+    },
+    {
+      "board": "board2",
+      "pattern": [
+        7,
+        6
+      ],
+      "square_mm": 30.0,
+      "calib": "/root/camera-calibration/outputs/calib.json",
+      "calib_sha256": "8552860ea9399d26d88efb42404965f6a6e642e0c884e8884812e913a0941c4d",
+      "corners": "/root/camera-calibration/outputs/corners.json",
+      "corners_sha256": "bc8d9ca3823fdb25d3532c27363807648262d4722310ee1c812013d8dd0e59fe",
+      "rows": [
+        {
+          "board": "board2",
+          "camera": "left",
+          "pattern": "7x6",
+          "square_mm": 30.0,
+          "image_count": 4,
+          "image_width": 1024,
+          "image_height": 576,
+          "corners_per_image": 42,
+          "coverage_mean_pct": 8.462311217946915,
+          "coverage_std_pct": 0.19384237931232656,
+          "coverage_min_pct": 8.25562170688415,
+          "coverage_max_pct": 8.68961053864111,
+          "cell_px_mean": 40.79003750304196,
+          "cell_px_std_between_images": 0.4693452905084977,
+          "rms_px": 0.09698598841104566,
+          "fx_px": 260.8179638124037,
+          "fy_px": 264.0155097963395,
+          "cx_px": 517.6894479807548,
+          "cy_px": 300.0231703936518,
+          "fx_over_width": 0.2547050427855505,
+          "fy_over_height": 0.4583602600630894,
+          "k1": 0.005539833492194312,
+          "k2": -0.00232163185862344,
+          "p1": -2.4125593683773688e-05,
+          "p2": 0.0013827189065402177,
+          "k3": 0.0
+        },
+        {
+          "board": "board2",
+          "camera": "right",
+          "pattern": "7x6",
+          "square_mm": 30.0,
+          "image_count": 4,
+          "image_width": 1024,
+          "image_height": 576,
+          "corners_per_image": 42,
+          "coverage_mean_pct": 8.543021304237985,
+          "coverage_std_pct": 0.17198448685253334,
+          "coverage_min_pct": 8.358262595576843,
+          "coverage_max_pct": 8.75081686604749,
+          "cell_px_mean": 40.98102479585717,
+          "cell_px_std_between_images": 0.41297731065714544,
+          "rms_px": 0.11921878593522948,
+          "fx_px": 78.29536453775145,
+          "fy_px": 79.32709150295334,
+          "cx_px": 479.6907211601008,
+          "cy_px": 279.50683120164047,
+          "fx_over_width": 0.0764603169313979,
+          "fy_over_height": 0.1377206449704051,
+          "k1": 0.00026543001579520074,
+          "k2": -1.2804268618822162e-05,
+          "p1": -6.32237606663646e-07,
+          "p2": -0.0001450032025143718,
+          "k3": 0.0
+        }
+      ],
+      "images": [
+        {
+          "board": "board2",
+          "camera": "left",
+          "file": "data/board2/Im_L_1.png",
+          "image_size": [
+            1024,
+            576
+          ],
+          "coverage_ratio": 0.08255621706884152,
+          "cell_px_mean": 40.2875544289316,
+          "cell_px_std": 0.35298601842466154,
+          "cell_px_min": 39.55072745810783,
+          "cell_px_max": 41.154406314764266,
+          "per_image_rms_px": 0.098893000119405
+        },
+        {
+          "board": "board2",
+          "camera": "left",
+          "file": "data/board2/Im_L_2.png",
+          "image_size": [
+            1024,
+            576
+          ],
+          "coverage_ratio": 0.08285120791332684,
+          "cell_px_mean": 40.363739189398366,
+          "cell_px_std": 0.2785181767403617,
+          "cell_px_min": 39.846225358773715,
+          "cell_px_max": 40.975756059800894,
+          "per_image_rms_px": 0.09367279646487067
+        },
+        {
+          "board": "board2",
+          "camera": "left",
+          "file": "data/board2/Im_L_3.png",
+          "image_size": [
+            1024,
+            576
+          ],
+          "coverage_ratio": 0.08618891834929718,
+          "cell_px_mean": 41.16610186509152,
+          "cell_px_std": 0.29251809563692766,
+          "cell_px_min": 40.67474656443654,
+          "cell_px_max": 41.774288029367675,
+          "per_image_rms_px": 0.09332117382124376
+        },
+        {
+          "board": "board2",
+          "camera": "left",
+          "file": "data/board2/Im_L_4.png",
+          "image_size": [
+            1024,
+            576
+          ],
+          "coverage_ratio": 0.08689610538641111,
+          "cell_px_mean": 41.342754528746354,
+          "cell_px_std": 0.3452378154615584,
+          "cell_px_min": 40.84880203948983,
+          "cell_px_max": 42.025452263077256,
+          "per_image_rms_px": 0.10178942258142107
+        },
+        {
+          "board": "board2",
+          "camera": "right",
+          "file": "data/board2/Im_R_1.png",
+          "image_size": [
+            1024,
+            576
+          ],
+          "coverage_ratio": 0.08388788949408069,
+          "cell_px_mean": 40.60553113293766,
+          "cell_px_std": 0.38334910497708424,
+          "cell_px_min": 39.910844451630695,
+          "cell_px_max": 41.32873712606456,
+          "per_image_rms_px": 0.13531325465483168
+        },
+        {
+          "board": "board2",
+          "camera": "right",
+          "file": "data/board2/Im_R_2.png",
+          "image_size": [
+            1024,
+            576
+          ],
+          "coverage_ratio": 0.08358262595576843,
+          "cell_px_mean": 40.54172952509293,
+          "cell_px_std": 0.4047874243994176,
+          "cell_px_min": 39.77718614942291,
+          "cell_px_max": 41.19631855608563,
+          "per_image_rms_px": 0.09803029678117316
+        },
+        {
+          "board": "board2",
+          "camera": "right",
+          "file": "data/board2/Im_R_3.png",
+          "image_size": [
+            1024,
+            576
+          ],
+          "coverage_ratio": 0.0867421680591954,
+          "cell_px_mean": 41.29818427105182,
+          "cell_px_std": 0.48781368385385265,
+          "cell_px_min": 40.37348080532394,
+          "cell_px_max": 42.188836727444716,
+          "per_image_rms_px": 0.11745172434518762
+        },
+        {
+          "board": "board2",
+          "camera": "right",
+          "file": "data/board2/Im_R_4.png",
+          "image_size": [
+            1024,
+            576
+          ],
+          "coverage_ratio": 0.08750816866047491,
+          "cell_px_mean": 41.47865425434627,
+          "cell_px_std": 0.6355237771383289,
+          "cell_px_min": 40.14822284221144,
+          "cell_px_max": 42.866514302888056,
+          "per_image_rms_px": 0.12304155753582051
+        }
+      ]
+    }
+  ]
+}

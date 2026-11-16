@@ -1,0 +1,1018 @@
+{
+  "schema_version": 1,
+  "board": "board2",
+  "calibration_file": "outputs/calib.json",
+  "calibration_sha256": "8552860ea9399d26d88efb42404965f6a6e642e0c884e8884812e913a0941c4d",
+  "selected_alpha": 0.0,
+  "compared_alphas": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "note": "Mapping displacement includes the alpha-dependent new-camera-matrix scaling.",
+  "environment": {
+    "python": "3.13.11",
+    "opencv": "4.13.0",
+    "numpy": "1.26.4"
+  },
+  "cameras": {
+    "left": {
+      "image_size": [
+        1024,
+        576
+      ],
+      "dist": [
+        0.005539833492194312,
+        -0.00232163185862344,
+        -2.4125593683773688e-05,
+        0.0013827189065402177,
+        0.0
+      ],
+      "alphas": [
+        {
+          "alpha": 0.0,
+          "new_K": [
+            [
+              256.88163231919884,
+              0.0,
+              523.1902685822549
+            ],
+            [
+              0.0,
+              265.1959208043087,
+              300.0264091909595
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            0,
+            0,
+            1023,
+            575
+          ],
+          "roi_area_ratio": 0.9972890218098959,
+          "valid_map_ratio": 0.9995812310112847,
+          "mean_mapping_displacement_px": 5.059078693389893,
+          "max_mapping_displacement_px": 18.606040954589844
+        },
+        {
+          "alpha": 0.5,
+          "new_K": [
+            [
+              253.2890881444667,
+              0.0,
+              524.3976910033123
+            ],
+            [
+              0.0,
+              257.98162839240945,
+              300.48518767032664
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            9,
+            9,
+            1009,
+            559
+          ],
+          "roi_area_ratio": 0.9562700059678819,
+          "valid_map_ratio": 0.9709540473090278,
+          "mean_mapping_displacement_px": 9.059711456298828,
+          "max_mapping_displacement_px": 15.888632774353027
+        },
+        {
+          "alpha": 1.0,
+          "new_K": [
+            [
+              249.6965439697345,
+              0.0,
+              525.6051134243696
+            ],
+            [
+              0.0,
+              250.76733598051018,
+              300.9439661496938
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            17,
+            17,
+            994,
+            544
+          ],
+          "roi_area_ratio": 0.9167751736111112,
+          "valid_map_ratio": 0.9321255154079862,
+          "mean_mapping_displacement_px": 14.57519817352295,
+          "max_mapping_displacement_px": 23.52979850769043
+        }
+      ],
+      "files": [
+        {
+          "file": "data/board2/Im_L_1.png",
+          "saved": "undistorted/left/Im_L_1.png",
+          "compare": "figures/undistort_left_Im_L_1_compare.png",
+          "alpha_compare": "figures/undistort_left_Im_L_1_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  256.88163231919884,
+                  0.0,
+                  523.1902685822549
+                ],
+                [
+                  0.0,
+                  265.1959208043087,
+                  300.0264091909595
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1023,
+                575
+              ],
+              "roi_area_ratio": 0.9972890218098959,
+              "valid_map_ratio": 0.9995812310112847,
+              "mean_mapping_displacement_px": 5.059078693389893,
+              "max_mapping_displacement_px": 18.606040954589844
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  253.2890881444667,
+                  0.0,
+                  524.3976910033123
+                ],
+                [
+                  0.0,
+                  257.98162839240945,
+                  300.48518767032664
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                9,
+                9,
+                1009,
+                559
+              ],
+              "roi_area_ratio": 0.9562700059678819,
+              "valid_map_ratio": 0.9709540473090278,
+              "mean_mapping_displacement_px": 9.059711456298828,
+              "max_mapping_displacement_px": 15.888632774353027
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  249.6965439697345,
+                  0.0,
+                  525.6051134243696
+                ],
+                [
+                  0.0,
+                  250.76733598051018,
+                  300.9439661496938
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                17,
+                17,
+                994,
+                544
+              ],
+              "roi_area_ratio": 0.9167751736111112,
+              "valid_map_ratio": 0.9321255154079862,
+              "mean_mapping_displacement_px": 14.57519817352295,
+              "max_mapping_displacement_px": 23.52979850769043
+            }
+          ]
+        },
+        {
+          "file": "data/board2/Im_L_2.png",
+          "saved": "undistorted/left/Im_L_2.png",
+          "compare": "figures/undistort_left_Im_L_2_compare.png",
+          "alpha_compare": "figures/undistort_left_Im_L_2_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  256.88163231919884,
+                  0.0,
+                  523.1902685822549
+                ],
+                [
+                  0.0,
+                  265.1959208043087,
+                  300.0264091909595
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1023,
+                575
+              ],
+              "roi_area_ratio": 0.9972890218098959,
+              "valid_map_ratio": 0.9995812310112847,
+              "mean_mapping_displacement_px": 5.059078693389893,
+              "max_mapping_displacement_px": 18.606040954589844
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  253.2890881444667,
+                  0.0,
+                  524.3976910033123
+                ],
+                [
+                  0.0,
+                  257.98162839240945,
+                  300.48518767032664
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                9,
+                9,
+                1009,
+                559
+              ],
+              "roi_area_ratio": 0.9562700059678819,
+              "valid_map_ratio": 0.9709540473090278,
+              "mean_mapping_displacement_px": 9.059711456298828,
+              "max_mapping_displacement_px": 15.888632774353027
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  249.6965439697345,
+                  0.0,
+                  525.6051134243696
+                ],
+                [
+                  0.0,
+                  250.76733598051018,
+                  300.9439661496938
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                17,
+                17,
+                994,
+                544
+              ],
+              "roi_area_ratio": 0.9167751736111112,
+              "valid_map_ratio": 0.9321255154079862,
+              "mean_mapping_displacement_px": 14.57519817352295,
+              "max_mapping_displacement_px": 23.52979850769043
+            }
+          ]
+        },
+        {
+          "file": "data/board2/Im_L_3.png",
+          "saved": "undistorted/left/Im_L_3.png",
+          "compare": "figures/undistort_left_Im_L_3_compare.png",
+          "alpha_compare": "figures/undistort_left_Im_L_3_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  256.88163231919884,
+                  0.0,
+                  523.1902685822549
+                ],
+                [
+                  0.0,
+                  265.1959208043087,
+                  300.0264091909595
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1023,
+                575
+              ],
+              "roi_area_ratio": 0.9972890218098959,
+              "valid_map_ratio": 0.9995812310112847,
+              "mean_mapping_displacement_px": 5.059078693389893,
+              "max_mapping_displacement_px": 18.606040954589844
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  253.2890881444667,
+                  0.0,
+                  524.3976910033123
+                ],
+                [
+                  0.0,
+                  257.98162839240945,
+                  300.48518767032664
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                9,
+                9,
+                1009,
+                559
+              ],
+              "roi_area_ratio": 0.9562700059678819,
+              "valid_map_ratio": 0.9709540473090278,
+              "mean_mapping_displacement_px": 9.059711456298828,
+              "max_mapping_displacement_px": 15.888632774353027
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  249.6965439697345,
+                  0.0,
+                  525.6051134243696
+                ],
+                [
+                  0.0,
+                  250.76733598051018,
+                  300.9439661496938
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                17,
+                17,
+                994,
+                544
+              ],
+              "roi_area_ratio": 0.9167751736111112,
+              "valid_map_ratio": 0.9321255154079862,
+              "mean_mapping_displacement_px": 14.57519817352295,
+              "max_mapping_displacement_px": 23.52979850769043
+            }
+          ]
+        },
+        {
+          "file": "data/board2/Im_L_4.png",
+          "saved": "undistorted/left/Im_L_4.png",
+          "compare": "figures/undistort_left_Im_L_4_compare.png",
+          "alpha_compare": "figures/undistort_left_Im_L_4_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  256.88163231919884,
+                  0.0,
+                  523.1902685822549
+                ],
+                [
+                  0.0,
+                  265.1959208043087,
+                  300.0264091909595
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1023,
+                575
+              ],
+              "roi_area_ratio": 0.9972890218098959,
+              "valid_map_ratio": 0.9995812310112847,
+              "mean_mapping_displacement_px": 5.059078693389893,
+              "max_mapping_displacement_px": 18.606040954589844
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  253.2890881444667,
+                  0.0,
+                  524.3976910033123
+                ],
+                [
+                  0.0,
+                  257.98162839240945,
+                  300.48518767032664
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                9,
+                9,
+                1009,
+                559
+              ],
+              "roi_area_ratio": 0.9562700059678819,
+              "valid_map_ratio": 0.9709540473090278,
+              "mean_mapping_displacement_px": 9.059711456298828,
+              "max_mapping_displacement_px": 15.888632774353027
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  249.6965439697345,
+                  0.0,
+                  525.6051134243696
+                ],
+                [
+                  0.0,
+                  250.76733598051018,
+                  300.9439661496938
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                17,
+                17,
+                994,
+                544
+              ],
+              "roi_area_ratio": 0.9167751736111112,
+              "valid_map_ratio": 0.9321255154079862,
+              "mean_mapping_displacement_px": 14.57519817352295,
+              "max_mapping_displacement_px": 23.52979850769043
+            }
+          ]
+        }
+      ]
+    },
+    "right": {
+      "image_size": [
+        1024,
+        576
+      ],
+      "dist": [
+        0.00026543001579520074,
+        -1.2804268618822162e-05,
+        -6.32237606663646e-07,
+        -0.0001450032025143718,
+        0.0
+      ],
+      "alphas": [
+        {
+          "alpha": 0.0,
+          "new_K": [
+            [
+              77.15692080341277,
+              0.0,
+              475.4292849422079
+            ],
+            [
+              0.0,
+              79.44536552601255,
+              279.48205218476716
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            0,
+            0,
+            1023,
+            575
+          ],
+          "roi_area_ratio": 0.9972890218098959,
+          "valid_map_ratio": 0.9998830159505209,
+          "mean_mapping_displacement_px": 4.294379234313965,
+          "max_mapping_displacement_px": 14.903387069702148
+        },
+        {
+          "alpha": 0.5,
+          "new_K": [
+            [
+              76.43950647912612,
+              0.0,
+              474.2670413610424
+            ],
+            [
+              0.0,
+              77.73296679880723,
+              279.2747676358396
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            3,
+            6,
+            1013,
+            563
+          ],
+          "roi_area_ratio": 0.9669308132595487,
+          "valid_map_ratio": 0.9773406982421875,
+          "mean_mapping_displacement_px": 7.29864501953125,
+          "max_mapping_displacement_px": 13.32093334197998
+        },
+        {
+          "alpha": 1.0,
+          "new_K": [
+            [
+              75.72209215483949,
+              0.0,
+              473.10479777987695
+            ],
+            [
+              0.0,
+              76.0205680716019,
+              279.0674830869121
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            7,
+            12,
+            1004,
+            550
+          ],
+          "roi_area_ratio": 0.9362114800347222,
+          "valid_map_ratio": 0.9480421278211806,
+          "mean_mapping_displacement_px": 11.417708396911621,
+          "max_mapping_displacement_px": 18.898611068725586
+        }
+      ],
+      "files": [
+        {
+          "file": "data/board2/Im_R_1.png",
+          "saved": "undistorted/right/Im_R_1.png",
+          "compare": "figures/undistort_right_Im_R_1_compare.png",
+          "alpha_compare": "figures/undistort_right_Im_R_1_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  77.15692080341277,
+                  0.0,
+                  475.4292849422079
+                ],
+                [
+                  0.0,
+                  79.44536552601255,
+                  279.48205218476716
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1023,
+                575
+              ],
+              "roi_area_ratio": 0.9972890218098959,
+              "valid_map_ratio": 0.9998830159505209,
+              "mean_mapping_displacement_px": 4.294379234313965,
+              "max_mapping_displacement_px": 14.903387069702148
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  76.43950647912612,
+                  0.0,
+                  474.2670413610424
+                ],
+                [
+                  0.0,
+                  77.73296679880723,
+                  279.2747676358396
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                3,
+                6,
+                1013,
+                563
+              ],
+              "roi_area_ratio": 0.9669308132595487,
+              "valid_map_ratio": 0.9773406982421875,
+              "mean_mapping_displacement_px": 7.29864501953125,
+              "max_mapping_displacement_px": 13.32093334197998
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  75.72209215483949,
+                  0.0,
+                  473.10479777987695
+                ],
+                [
+                  0.0,
+                  76.0205680716019,
+                  279.0674830869121
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                7,
+                12,
+                1004,
+                550
+              ],
+              "roi_area_ratio": 0.9362114800347222,
+              "valid_map_ratio": 0.9480421278211806,
+              "mean_mapping_displacement_px": 11.417708396911621,
+              "max_mapping_displacement_px": 18.898611068725586
+            }
+          ]
+        },
+        {
+          "file": "data/board2/Im_R_2.png",
+          "saved": "undistorted/right/Im_R_2.png",
+          "compare": "figures/undistort_right_Im_R_2_compare.png",
+          "alpha_compare": "figures/undistort_right_Im_R_2_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  77.15692080341277,
+                  0.0,
+                  475.4292849422079
+                ],
+                [
+                  0.0,
+                  79.44536552601255,
+                  279.48205218476716
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1023,
+                575
+              ],
+              "roi_area_ratio": 0.9972890218098959,
+              "valid_map_ratio": 0.9998830159505209,
+              "mean_mapping_displacement_px": 4.294379234313965,
+              "max_mapping_displacement_px": 14.903387069702148
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  76.43950647912612,
+                  0.0,
+                  474.2670413610424
+                ],
+                [
+                  0.0,
+                  77.73296679880723,
+                  279.2747676358396
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                3,
+                6,
+                1013,
+                563
+              ],
+              "roi_area_ratio": 0.9669308132595487,
+              "valid_map_ratio": 0.9773406982421875,
+              "mean_mapping_displacement_px": 7.29864501953125,
+              "max_mapping_displacement_px": 13.32093334197998
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  75.72209215483949,
+                  0.0,
+                  473.10479777987695
+                ],
+                [
+                  0.0,
+                  76.0205680716019,
+                  279.0674830869121
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                7,
+                12,
+                1004,
+                550
+              ],
+              "roi_area_ratio": 0.9362114800347222,
+              "valid_map_ratio": 0.9480421278211806,
+              "mean_mapping_displacement_px": 11.417708396911621,
+              "max_mapping_displacement_px": 18.898611068725586
+            }
+          ]
+        },
+        {
+          "file": "data/board2/Im_R_3.png",
+          "saved": "undistorted/right/Im_R_3.png",
+          "compare": "figures/undistort_right_Im_R_3_compare.png",
+          "alpha_compare": "figures/undistort_right_Im_R_3_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  77.15692080341277,
+                  0.0,
+                  475.4292849422079
+                ],
+                [
+                  0.0,
+                  79.44536552601255,
+                  279.48205218476716
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1023,
+                575
+              ],
+              "roi_area_ratio": 0.9972890218098959,
+              "valid_map_ratio": 0.9998830159505209,
+              "mean_mapping_displacement_px": 4.294379234313965,
+              "max_mapping_displacement_px": 14.903387069702148
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  76.43950647912612,
+                  0.0,
+                  474.2670413610424
+                ],
+                [
+                  0.0,
+                  77.73296679880723,
+                  279.2747676358396
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                3,
+                6,
+                1013,
+                563
+              ],
+              "roi_area_ratio": 0.9669308132595487,
+              "valid_map_ratio": 0.9773406982421875,
+              "mean_mapping_displacement_px": 7.29864501953125,
+              "max_mapping_displacement_px": 13.32093334197998
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  75.72209215483949,
+                  0.0,
+                  473.10479777987695
+                ],
+                [
+                  0.0,
+                  76.0205680716019,
+                  279.0674830869121
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                7,
+                12,
+                1004,
+                550
+              ],
+              "roi_area_ratio": 0.9362114800347222,
+              "valid_map_ratio": 0.9480421278211806,
+              "mean_mapping_displacement_px": 11.417708396911621,
+              "max_mapping_displacement_px": 18.898611068725586
+            }
+          ]
+        },
+        {
+          "file": "data/board2/Im_R_4.png",
+          "saved": "undistorted/right/Im_R_4.png",
+          "compare": "figures/undistort_right_Im_R_4_compare.png",
+          "alpha_compare": "figures/undistort_right_Im_R_4_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  77.15692080341277,
+                  0.0,
+                  475.4292849422079
+                ],
+                [
+                  0.0,
+                  79.44536552601255,
+                  279.48205218476716
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1023,
+                575
+              ],
+              "roi_area_ratio": 0.9972890218098959,
+              "valid_map_ratio": 0.9998830159505209,
+              "mean_mapping_displacement_px": 4.294379234313965,
+              "max_mapping_displacement_px": 14.903387069702148
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  76.43950647912612,
+                  0.0,
+                  474.2670413610424
+                ],
+                [
+                  0.0,
+                  77.73296679880723,
+                  279.2747676358396
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                3,
+                6,
+                1013,
+                563
+              ],
+              "roi_area_ratio": 0.9669308132595487,
+              "valid_map_ratio": 0.9773406982421875,
+              "mean_mapping_displacement_px": 7.29864501953125,
+              "max_mapping_displacement_px": 13.32093334197998
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  75.72209215483949,
+                  0.0,
+                  473.10479777987695
+                ],
+                [
+                  0.0,
+                  76.0205680716019,
+                  279.0674830869121
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                7,
+                12,
+                1004,
+                550
+              ],
+              "roi_area_ratio": 0.9362114800347222,
+              "valid_map_ratio": 0.9480421278211806,
+              "mean_mapping_displacement_px": 11.417708396911621,
+              "max_mapping_displacement_px": 18.898611068725586
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

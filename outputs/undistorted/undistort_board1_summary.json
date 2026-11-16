@@ -1,0 +1,822 @@
+{
+  "schema_version": 1,
+  "board": "board1",
+  "calibration_file": "outputs/calib_board1.json",
+  "calibration_sha256": "e027fac991782569675de14378831a5f38e49558bd035003a90e32460b69251e",
+  "selected_alpha": 0.0,
+  "compared_alphas": [
+    0.0,
+    0.5,
+    1.0
+  ],
+  "note": "Mapping displacement includes the alpha-dependent new-camera-matrix scaling.",
+  "environment": {
+    "python": "3.13.11",
+    "opencv": "4.13.0",
+    "numpy": "1.26.4"
+  },
+  "cameras": {
+    "camA": {
+      "image_size": [
+        1080,
+        1440
+      ],
+      "dist": [
+        0.05036266436127172,
+        -0.07978990867398217,
+        -0.0036908252292567113,
+        -0.0016718526044610664,
+        0.0
+      ],
+      "alphas": [
+        {
+          "alpha": 0.0,
+          "new_K": [
+            [
+              1044.7312873577598,
+              0.0,
+              538.0061926255805
+            ],
+            [
+              0.0,
+              1042.0171085194522,
+              705.1958651073429
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            0,
+            0,
+            1079,
+            1439
+          ],
+          "roi_area_ratio": 0.9983802726337448,
+          "valid_map_ratio": 0.9998161008230453,
+          "mean_mapping_displacement_px": 4.345713138580322,
+          "max_mapping_displacement_px": 17.901060104370117
+        },
+        {
+          "alpha": 0.5,
+          "new_K": [
+            [
+              1031.4137422844951,
+              0.0,
+              537.521582268399
+            ],
+            [
+              0.0,
+              1033.4483648928183,
+              704.052090867257
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            6,
+            5,
+            1065,
+            1427
+          ],
+          "roi_area_ratio": 0.9772087191358024,
+          "valid_map_ratio": 0.9853137860082305,
+          "mean_mapping_displacement_px": 6.784649848937988,
+          "max_mapping_displacement_px": 9.859175682067871
+        },
+        {
+          "alpha": 1.0,
+          "new_K": [
+            [
+              1018.0961972112303,
+              0.0,
+              537.0369719112174
+            ],
+            [
+              0.0,
+              1024.8796212661844,
+              702.9083166271712
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            13,
+            9,
+            1051,
+            1415
+          ],
+          "roi_area_ratio": 0.9562532150205761,
+          "valid_map_ratio": 0.9654539609053497,
+          "mean_mapping_displacement_px": 11.167827606201172,
+          "max_mapping_displacement_px": 16.84221839904785
+        }
+      ],
+      "files": [
+        {
+          "file": "data/board1/2.jpg",
+          "saved": "undistorted/camA/2.jpg",
+          "compare": "figures/undistort_camA_2_compare.png",
+          "alpha_compare": "figures/undistort_camA_2_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  1044.7312873577598,
+                  0.0,
+                  538.0061926255805
+                ],
+                [
+                  0.0,
+                  1042.0171085194522,
+                  705.1958651073429
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1079,
+                1439
+              ],
+              "roi_area_ratio": 0.9983802726337448,
+              "valid_map_ratio": 0.9998161008230453,
+              "mean_mapping_displacement_px": 4.345713138580322,
+              "max_mapping_displacement_px": 17.901060104370117
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  1031.4137422844951,
+                  0.0,
+                  537.521582268399
+                ],
+                [
+                  0.0,
+                  1033.4483648928183,
+                  704.052090867257
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                6,
+                5,
+                1065,
+                1427
+              ],
+              "roi_area_ratio": 0.9772087191358024,
+              "valid_map_ratio": 0.9853137860082305,
+              "mean_mapping_displacement_px": 6.784649848937988,
+              "max_mapping_displacement_px": 9.859175682067871
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  1018.0961972112303,
+                  0.0,
+                  537.0369719112174
+                ],
+                [
+                  0.0,
+                  1024.8796212661844,
+                  702.9083166271712
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                13,
+                9,
+                1051,
+                1415
+              ],
+              "roi_area_ratio": 0.9562532150205761,
+              "valid_map_ratio": 0.9654539609053497,
+              "mean_mapping_displacement_px": 11.167827606201172,
+              "max_mapping_displacement_px": 16.84221839904785
+            }
+          ]
+        },
+        {
+          "file": "data/board1/3.jpg",
+          "saved": "undistorted/camA/3.jpg",
+          "compare": "figures/undistort_camA_3_compare.png",
+          "alpha_compare": "figures/undistort_camA_3_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  1044.7312873577598,
+                  0.0,
+                  538.0061926255805
+                ],
+                [
+                  0.0,
+                  1042.0171085194522,
+                  705.1958651073429
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1079,
+                1439
+              ],
+              "roi_area_ratio": 0.9983802726337448,
+              "valid_map_ratio": 0.9998161008230453,
+              "mean_mapping_displacement_px": 4.345713138580322,
+              "max_mapping_displacement_px": 17.901060104370117
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  1031.4137422844951,
+                  0.0,
+                  537.521582268399
+                ],
+                [
+                  0.0,
+                  1033.4483648928183,
+                  704.052090867257
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                6,
+                5,
+                1065,
+                1427
+              ],
+              "roi_area_ratio": 0.9772087191358024,
+              "valid_map_ratio": 0.9853137860082305,
+              "mean_mapping_displacement_px": 6.784649848937988,
+              "max_mapping_displacement_px": 9.859175682067871
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  1018.0961972112303,
+                  0.0,
+                  537.0369719112174
+                ],
+                [
+                  0.0,
+                  1024.8796212661844,
+                  702.9083166271712
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                13,
+                9,
+                1051,
+                1415
+              ],
+              "roi_area_ratio": 0.9562532150205761,
+              "valid_map_ratio": 0.9654539609053497,
+              "mean_mapping_displacement_px": 11.167827606201172,
+              "max_mapping_displacement_px": 16.84221839904785
+            }
+          ]
+        },
+        {
+          "file": "data/board1/4.jpg",
+          "saved": "undistorted/camA/4.jpg",
+          "compare": "figures/undistort_camA_4_compare.png",
+          "alpha_compare": "figures/undistort_camA_4_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  1044.7312873577598,
+                  0.0,
+                  538.0061926255805
+                ],
+                [
+                  0.0,
+                  1042.0171085194522,
+                  705.1958651073429
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1079,
+                1439
+              ],
+              "roi_area_ratio": 0.9983802726337448,
+              "valid_map_ratio": 0.9998161008230453,
+              "mean_mapping_displacement_px": 4.345713138580322,
+              "max_mapping_displacement_px": 17.901060104370117
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  1031.4137422844951,
+                  0.0,
+                  537.521582268399
+                ],
+                [
+                  0.0,
+                  1033.4483648928183,
+                  704.052090867257
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                6,
+                5,
+                1065,
+                1427
+              ],
+              "roi_area_ratio": 0.9772087191358024,
+              "valid_map_ratio": 0.9853137860082305,
+              "mean_mapping_displacement_px": 6.784649848937988,
+              "max_mapping_displacement_px": 9.859175682067871
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  1018.0961972112303,
+                  0.0,
+                  537.0369719112174
+                ],
+                [
+                  0.0,
+                  1024.8796212661844,
+                  702.9083166271712
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                13,
+                9,
+                1051,
+                1415
+              ],
+              "roi_area_ratio": 0.9562532150205761,
+              "valid_map_ratio": 0.9654539609053497,
+              "mean_mapping_displacement_px": 11.167827606201172,
+              "max_mapping_displacement_px": 16.84221839904785
+            }
+          ]
+        }
+      ]
+    },
+    "camB": {
+      "image_size": [
+        1440,
+        1080
+      ],
+      "dist": [
+        0.1600667934172051,
+        -0.3856542082277714,
+        0.0019164234621973466,
+        0.002235192415933073,
+        0.0
+      ],
+      "alphas": [
+        {
+          "alpha": 0.0,
+          "new_K": [
+            [
+              1077.6675540477506,
+              0.0,
+              735.8915588986293
+            ],
+            [
+              0.0,
+              1096.3776060917742,
+              538.9888221705183
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            0,
+            0,
+            1439,
+            1079
+          ],
+          "roi_area_ratio": 0.9983802726337448,
+          "valid_map_ratio": 0.9997665895061728,
+          "mean_mapping_displacement_px": 8.576374053955078,
+          "max_mapping_displacement_px": 76.30794525146484
+        },
+        {
+          "alpha": 0.5,
+          "new_K": [
+            [
+              818.0908928363048,
+              0.0,
+              854.5679238137183
+            ],
+            [
+              0.0,
+              780.4895175205913,
+              569.1525869885782
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            296,
+            185,
+            1092,
+            768
+          ],
+          "roi_area_ratio": 0.5392592592592592,
+          "valid_map_ratio": 0.6380259773662551,
+          "mean_mapping_displacement_px": 168.03851318359375,
+          "max_mapping_displacement_px": 585.71337890625
+        },
+        {
+          "alpha": 1.0,
+          "new_K": [
+            [
+              558.5142316248589,
+              0.0,
+              973.2442887288072
+            ],
+            [
+              0.0,
+              464.6014289494086,
+              599.3163518066381
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "roi": [
+            592,
+            371,
+            746,
+            457
+          ],
+          "roi_area_ratio": 0.2192142489711934,
+          "valid_map_ratio": 0.4663882458847737,
+          "mean_mapping_displacement_px": 400.9076232910156,
+          "max_mapping_displacement_px": 1516.925048828125
+        }
+      ],
+      "files": [
+        {
+          "file": "data/board1/11.jpg",
+          "saved": "undistorted/camB/11.jpg",
+          "compare": "figures/undistort_camB_11_compare.png",
+          "alpha_compare": "figures/undistort_camB_11_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  1077.6675540477506,
+                  0.0,
+                  735.8915588986293
+                ],
+                [
+                  0.0,
+                  1096.3776060917742,
+                  538.9888221705183
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1439,
+                1079
+              ],
+              "roi_area_ratio": 0.9983802726337448,
+              "valid_map_ratio": 0.9997665895061728,
+              "mean_mapping_displacement_px": 8.576374053955078,
+              "max_mapping_displacement_px": 76.30794525146484
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  818.0908928363048,
+                  0.0,
+                  854.5679238137183
+                ],
+                [
+                  0.0,
+                  780.4895175205913,
+                  569.1525869885782
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                296,
+                185,
+                1092,
+                768
+              ],
+              "roi_area_ratio": 0.5392592592592592,
+              "valid_map_ratio": 0.6380259773662551,
+              "mean_mapping_displacement_px": 168.03851318359375,
+              "max_mapping_displacement_px": 585.71337890625
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  558.5142316248589,
+                  0.0,
+                  973.2442887288072
+                ],
+                [
+                  0.0,
+                  464.6014289494086,
+                  599.3163518066381
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                592,
+                371,
+                746,
+                457
+              ],
+              "roi_area_ratio": 0.2192142489711934,
+              "valid_map_ratio": 0.4663882458847737,
+              "mean_mapping_displacement_px": 400.9076232910156,
+              "max_mapping_displacement_px": 1516.925048828125
+            }
+          ]
+        },
+        {
+          "file": "data/board1/12.jpg",
+          "saved": "undistorted/camB/12.jpg",
+          "compare": "figures/undistort_camB_12_compare.png",
+          "alpha_compare": "figures/undistort_camB_12_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  1077.6675540477506,
+                  0.0,
+                  735.8915588986293
+                ],
+                [
+                  0.0,
+                  1096.3776060917742,
+                  538.9888221705183
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1439,
+                1079
+              ],
+              "roi_area_ratio": 0.9983802726337448,
+              "valid_map_ratio": 0.9997665895061728,
+              "mean_mapping_displacement_px": 8.576374053955078,
+              "max_mapping_displacement_px": 76.30794525146484
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  818.0908928363048,
+                  0.0,
+                  854.5679238137183
+                ],
+                [
+                  0.0,
+                  780.4895175205913,
+                  569.1525869885782
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                296,
+                185,
+                1092,
+                768
+              ],
+              "roi_area_ratio": 0.5392592592592592,
+              "valid_map_ratio": 0.6380259773662551,
+              "mean_mapping_displacement_px": 168.03851318359375,
+              "max_mapping_displacement_px": 585.71337890625
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  558.5142316248589,
+                  0.0,
+                  973.2442887288072
+                ],
+                [
+                  0.0,
+                  464.6014289494086,
+                  599.3163518066381
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                592,
+                371,
+                746,
+                457
+              ],
+              "roi_area_ratio": 0.2192142489711934,
+              "valid_map_ratio": 0.4663882458847737,
+              "mean_mapping_displacement_px": 400.9076232910156,
+              "max_mapping_displacement_px": 1516.925048828125
+            }
+          ]
+        },
+        {
+          "file": "data/board1/18.jpg",
+          "saved": "undistorted/camB/18.jpg",
+          "compare": "figures/undistort_camB_18_compare.png",
+          "alpha_compare": "figures/undistort_camB_18_alpha_compare.png",
+          "alphas": [
+            {
+              "alpha": 0.0,
+              "new_K": [
+                [
+                  1077.6675540477506,
+                  0.0,
+                  735.8915588986293
+                ],
+                [
+                  0.0,
+                  1096.3776060917742,
+                  538.9888221705183
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                0,
+                0,
+                1439,
+                1079
+              ],
+              "roi_area_ratio": 0.9983802726337448,
+              "valid_map_ratio": 0.9997665895061728,
+              "mean_mapping_displacement_px": 8.576374053955078,
+              "max_mapping_displacement_px": 76.30794525146484
+            },
+            {
+              "alpha": 0.5,
+              "new_K": [
+                [
+                  818.0908928363048,
+                  0.0,
+                  854.5679238137183
+                ],
+                [
+                  0.0,
+                  780.4895175205913,
+                  569.1525869885782
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                296,
+                185,
+                1092,
+                768
+              ],
+              "roi_area_ratio": 0.5392592592592592,
+              "valid_map_ratio": 0.6380259773662551,
+              "mean_mapping_displacement_px": 168.03851318359375,
+              "max_mapping_displacement_px": 585.71337890625
+            },
+            {
+              "alpha": 1.0,
+              "new_K": [
+                [
+                  558.5142316248589,
+                  0.0,
+                  973.2442887288072
+                ],
+                [
+                  0.0,
+                  464.6014289494086,
+                  599.3163518066381
+                ],
+                [
+                  0.0,
+                  0.0,
+                  1.0
+                ]
+              ],
+              "roi": [
+                592,
+                371,
+                746,
+                457
+              ],
+              "roi_area_ratio": 0.2192142489711934,
+              "valid_map_ratio": 0.4663882458847737,
+              "mean_mapping_displacement_px": 400.9076232910156,
+              "max_mapping_displacement_px": 1516.925048828125
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
