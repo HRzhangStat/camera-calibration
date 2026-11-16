@@ -22,7 +22,8 @@ fi
 echo "合并以下文件:"
 printf '  %s\n' "${FILES[@]##*/}"
 
-ARGS=("${FILES[@]}" -o "$OUT" --toc --toc-depth=2)
+# 图片路径统一为仓库根目录下的 outputs/...，用 resource-path 解析，不依赖当前目录
+ARGS=("${FILES[@]}" -o "$OUT" --resource-path="$ROOT")
 if [ -f "$TEMPLATE" ]; then
   ARGS+=(--reference-doc="$TEMPLATE")
   echo "使用模板: report/template.docx"
