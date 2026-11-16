@@ -25,3 +25,5 @@ __pycache__/
 ~$*
 # 生成的报告（用 GROUP=组号 bash scripts/build_report.sh 重新生成）
 *-相机标定.docx
+*-相机标定.pdf
+组X-相机标定.pdf
